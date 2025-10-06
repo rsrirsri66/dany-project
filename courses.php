@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang=en>
-<!-- Mirrored from html.merku.love/edison/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:24 GMT -->
+<!-- Mirrored from html.merku.love/DynamicStaccato/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:24 GMT -->
 
 <head>
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
     <meta http-equiv=X-UA-Compatible content="ie=edge">
-    <title>All courses | Edison</title>
+    <title>All courses | DynamicStaccato</title>
     <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async="">
     </script>
     <script src=https://www.youtube.com/player_api></script>
@@ -14,7 +14,7 @@
     <link rel="stylesheet preload" as=style href=css/icomoon.css>
     <link rel="stylesheet preload" as=style href=css/libs.min.css>
     <link rel=stylesheet href=css/courses.min.css>
-    <link rel=stylesheet href=css/floatbutton.min.css>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 </head>
@@ -405,6 +405,6 @@
     </script>
 
 </body>
-<!-- Mirrored from html.merku.love/edison/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:28 GMT -->
+<!-- Mirrored from html.merku.love/DynamicStaccato/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:28 GMT -->
 
 </html>

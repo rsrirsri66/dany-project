@@ -48,13 +48,13 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
 
 <!DOCTYPE html>
 <html lang=en>
-<!-- Mirrored from html.merku.love/edison/pricing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:37 GMT -->
+<!-- Mirrored from html.merku.love/DynamicStaccato/pricing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:37 GMT -->
 
 <head>
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
     <meta http-equiv=X-UA-Compatible content="ie=edge">
-    <title>Prices | Edison</title>
+    <title>Prices | DynamicStaccato</title>
     <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async="">
     </script>
     <script src=https://www.youtube.com/player_api></script>
@@ -62,7 +62,7 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
     <link rel="stylesheet preload" as=style href=css/icomoon.css>
     <link rel="stylesheet preload" as=style href=css/libs.min.css>
     <link rel=stylesheet href=css/pricing.min.css>
-    <link rel=stylesheet href=css/floatbutton.min.css>
+    
     <style>
     /* Media Popup Styles */
     .media-popup {
@@ -105,40 +105,42 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
     .media-popup-close:hover {
         color: red;
     }
+
     /* Card wrapper styling */
-/* Card wrapper styling */
-.pricing_list-card {
-    width: 100%;
-    max-width: 350px;   /* Consistent card width */
-    margin: 0 auto;
-}
+    /* Card wrapper styling */
+    .pricing_list-card {
+        width: 100%;
+        max-width: 350px;
+        /* Consistent card width */
+        margin: 0 auto;
+    }
 
-.card-wrapper {
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+    .card-wrapper {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-.card-wrapper:hover {
-    transform: translateY(-5px);
-}
+    .card-wrapper:hover {
+        transform: translateY(-5px);
+    }
 
-/* Common media styling for both video and image */
-.card-wrapper video,
-.card-wrapper img {
-    width: 100%;
-    height: 220px;       /* Fixed height for all */
-    object-fit: cover;   /* Crop nicely */
-    border-radius: 0;
-}
-
-
+    /* Common media styling for both video and image */
+    .card-wrapper video,
+    .card-wrapper img {
+        width: 100%;
+        height: 220px;
+        /* Fixed height for all */
+        object-fit: cover;
+        /* Crop nicely */
+        border-radius: 0;
+    }
     </style>
 </head>
 
@@ -171,99 +173,87 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
             </div>
             </div>
         </section>
-       <section class="pricing">
-    <div class="container">
-        <div class="pricing_header">
-            <h2 class="pricing_header-title">Our Events Photos</h2>
-        </div>
+        <section class="pricing">
+            <div class="container">
+                <div class="pricing_header">
+                    <h2 class="pricing_header-title">Our Events Photos</h2>
+                </div>
 
-        <!-- Tabs -->
-        <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
-            <?php 
+                <!-- Tabs -->
+                <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
+                    <?php 
             $first = true;
             foreach ($events as $event) { ?>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link <?= $first ? 'active' : '' ?>" 
-                            id="tab-<?= $event['id'] ?>" 
-                            data-bs-toggle="tab"
-                            data-bs-target="#photos-<?= $event['id'] ?>" 
-                            type="button" role="tab"
-                            aria-controls="photos-<?= $event['id'] ?>" 
-                            aria-selected="<?= $first ? 'true' : 'false' ?>">
-                        <span class="nav-link_text"><?= htmlspecialchars($event['name']) ?></span>
-                    </button>
-                </li>
-            <?php $first = false; } ?>
-        </ul>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link <?= $first ? 'active' : '' ?>" id="tab-<?= $event['id'] ?>"
+                            data-bs-toggle="tab" data-bs-target="#photos-<?= $event['id'] ?>" type="button" role="tab"
+                            aria-controls="photos-<?= $event['id'] ?>" aria-selected="<?= $first ? 'true' : 'false' ?>">
+                            <span class="nav-link_text"><?= htmlspecialchars($event['name']) ?></span>
+                        </button>
+                    </li>
+                    <?php $first = false; } ?>
+                </ul>
 
-        <!-- Tab Content -->
-        <div class="tab-content">
-            <?php 
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <?php 
             $first = true;
             foreach ($events as $event) { ?>
-                <div class="tab-pane fade <?= $first ? 'show active' : '' ?>" 
-                     id="photos-<?= $event['id'] ?>" 
-                     role="tabpanel" 
-                     aria-labelledby="tab-<?= $event['id'] ?>">
-                    <ul class="pricing_list d-md-flex flex-wrap">
-                        <?php foreach ($event['images'] as $img) { ?>
+                    <div class="tab-pane fade <?= $first ? 'show active' : '' ?>" id="photos-<?= $event['id'] ?>"
+                        role="tabpanel" aria-labelledby="tab-<?= $event['id'] ?>">
+                        <ul class="pricing_list d-md-flex flex-wrap">
+                            <?php foreach ($event['images'] as $img) { ?>
                             <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
                                 <div class="card-wrapper">
                                     <div class="top top--basic">
                                         <h5 class="top_title"><?= htmlspecialchars($event['name']) ?> Celebration</h5>
                                     </div>
                                     <div class="main">
-                                        <img src="admin/<?= $img ?>" class="img-fluid rounded w-100" alt="<?= $event['name'] ?> Image">
+                                        <img src="admin/<?= $img ?>" class="img-fluid rounded w-100"
+                                            alt="<?= $event['name'] ?> Image">
                                     </div>
                                 </div>
                             </li>
-                        <?php } ?>
-                    </ul>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <?php $first = false; } ?>
                 </div>
-            <?php $first = false; } ?>
-        </div>
-    </div>
-</section>
+            </div>
+        </section>
 
 
         <!-- Second Section (Videos) -->
         <section class="pricing">
-    <div class="container">
-        <div class="pricing_header">
-            <h2 class="pricing_header-title">Our Events Videos</h2>
-        </div>
+            <div class="container">
+                <div class="pricing_header">
+                    <h2 class="pricing_header-title">Our Events Videos</h2>
+                </div>
 
-        <!-- Tabs -->
-        <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
-            <?php 
+                <!-- Tabs -->
+                <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
+                    <?php 
             $first = true;
             foreach ($events as $event) { ?>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link <?= $first ? 'active' : '' ?>"
-                            id="tab-video-<?= $event['id'] ?>"
-                            data-bs-toggle="tab"
-                            data-bs-target="#videos-<?= $event['id'] ?>"
-                            type="button"
-                            role="tab"
-                            aria-controls="videos-<?= $event['id'] ?>"
-                            aria-selected="<?= $first ? 'true' : 'false' ?>">
-                        <span class="nav-link_text"><?= htmlspecialchars($event['name']) ?></span>
-                    </button>
-                </li>
-            <?php $first = false; } ?>
-        </ul>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link <?= $first ? 'active' : '' ?>" id="tab-video-<?= $event['id'] ?>"
+                            data-bs-toggle="tab" data-bs-target="#videos-<?= $event['id'] ?>" type="button" role="tab"
+                            aria-controls="videos-<?= $event['id'] ?>" aria-selected="<?= $first ? 'true' : 'false' ?>">
+                            <span class="nav-link_text"><?= htmlspecialchars($event['name']) ?></span>
+                        </button>
+                    </li>
+                    <?php $first = false; } ?>
+                </ul>
 
-        <!-- Tab Content -->
-        <div class="tab-content">
-            <?php 
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <?php 
             $first = true;
             foreach ($video_events as $video_event) { ?>
-                <div class="tab-pane fade <?= $first ? 'show active' : '' ?>"
-                     id="videos-<?= $video_event['id'] ?>"
-                     role="tabpanel"
-                     aria-labelledby="tab-video-<?= $video_event['id'] ?>">
-                    <ul class="pricing_list d-md-flex flex-wrap">
-                        <?php foreach ($video_event['videos'] as $video) { ?>
+                    <div class="tab-pane fade <?= $first ? 'show active' : '' ?>" id="videos-<?= $video_event['id'] ?>"
+                        role="tabpanel" aria-labelledby="tab-video-<?= $video_event['id'] ?>">
+                        <ul class="pricing_list d-md-flex flex-wrap">
+                            <?php foreach ($video_event['videos'] as $video) { ?>
                             <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
                                 <div class="card-wrapper">
                                     <div class="top top--advanced">
@@ -277,18 +267,14 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
                                     </div>
                                 </div>
                             </li>
-                        <?php } ?>
-                    </ul>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <?php $first = false; } ?>
                 </div>
-            <?php $first = false; } ?>
-        </div>
-    </div>
-</section>
-
-
-
-
-        <section class=faq>
+            </div>
+        </section>
+         <section class=faq>
             <div class=phone>
                 <lottie-player src=lottie/phone.json background=404.html speed=1 style="width: 100%; height: 100%" loop
                     autoplay></lottie-player>
@@ -299,62 +285,90 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
             </div>
             <div class="container d-flex flex-column align-items-center">
                 <div class=faq_header>
-                    <h2 class=faq_header-title data-aos=fade-down>Answering your common questions</h2>
-                    <p class=faq_header-text data-aos=fade-up>Sed a eros sodales diam sagittis faucibus. Cras id erat
-                        nisl. Fusce faucibus nulla sed finibus egestas. Vestibulum purus magna, auctor consectetur sem
-                        nec, consectetur porta purus.</p>
+                    <h2 class=faq_header-title data-aos=fade-down>Answering Your Questions 🎶</h2>
+                    <p class=faq_header-text data-aos=fade-up>
+                        At DynamicStaccato Musical Academy, we know students and parents have many questions before
+                        starting
+                        their musical journey. Here are some common queries answered for you.
+                    </p>
                 </div>
                 <div class=faq_accordion id=faq_accordion>
+
+                    <!-- FAQ 1 -->
                     <div class=faq_accordion-item>
                         <div class=item-wrapper>
                             <h4 class="faq_accordion-item_header d-flex justify-content-between align-items-center collapsed"
-                                data-bs-toggle=collapse data-bs-target=#item-1 aria-expanded=true><span class=text>What
-                                    ante quis tincidunt porta, neque metus dapibus velit? </span><span
-                                    class="icon transform"></span></h4>
+                                data-bs-toggle=collapse data-bs-target=#item-1 aria-expanded=true>
+                                <span class=text>What instruments can I learn at DynamicStaccato? </span><span
+                                    class="icon transform"></span>
+                            </h4>
                             <div id=item-1 class="accordion-collapse collapse show">
-                                <div class=faq_accordion-item_body>Nam quis facilisis magna, sit amet posuere tellus.
-                                    Donec imperdiet tortor vitae pharetra congue. Aliquam nunc est, iaculis in erat
-                                    lobortis, convallis varius mi. Orci varius natoque penatibus et magnis dis
-                                    parturient montes, nascetur ridiculus mus. Aliquam vel suscipit nisi, et imperdiet
-                                    nulla. Praesent condimentum metus aliquet venenatis feugiat. Nunc at iaculis nisl.
-                                    Donec ultrices placerat euismod</div>
+                                <div class=faq_accordion-item_body>
+                                    We offer a wide range of courses including Piano, Guitar, Drums, Violin, and Vocal
+                                    training.
+                                    Each program is designed for beginners as well as advanced learners, with
+                                    personalized mentoring.
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- FAQ 2 -->
                     <div class=faq_accordion-item>
                         <div class=item-wrapper>
                             <h4 class="faq_accordion-item_header d-flex justify-content-between align-items-center collapsed"
-                                data-bs-toggle=collapse data-bs-target=#item-2 aria-expanded=false><span class=text>What
-                                    ante quis tincidunt porta, neque metus dapibus velit? </span><span
-                                    class=icon></span></h4>
+                                data-bs-toggle=collapse data-bs-target=#item-2 aria-expanded=false>
+                                <span class=text>Do you provide online music classes? </span><span class=icon></span>
+                            </h4>
                             <div id=item-2 class="accordion-collapse collapse">
-                                <div class=faq_accordion-item_body>Nam quis facilisis magna, sit amet posuere tellus.
-                                    Donec imperdiet tortor vitae pharetra congue. Aliquam nunc est, iaculis in erat
-                                    lobortis, convallis varius mi. Orci varius natoque penatibus et magnis dis
-                                    parturient montes, nascetur ridiculus mus. Aliquam vel suscipit nisi, et imperdiet
-                                    nulla. Praesent condimentum metus aliquet venenatis feugiat. Nunc at iaculis nisl.
-                                    Donec ultrices placerat euismod</div>
+                                <div class=faq_accordion-item_body>
+                                    Yes! We provide both <strong>in-person</strong> and <strong>live online
+                                        classes</strong>.
+                                    Our online programs are interactive, with one-on-one feedback from professional
+                                    mentors.
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- FAQ 3 -->
                     <div class=faq_accordion-item>
                         <div class=item-wrapper>
                             <h4 class="faq_accordion-item_header d-flex justify-content-between align-items-center collapsed"
-                                data-bs-toggle=collapse data-bs-target=#item-3 aria-expanded=false><span class=text>What
-                                    ante quis tincidunt porta, neque metus dapibus velit? </span><span
-                                    class=icon></span></h4>
+                                data-bs-toggle=collapse data-bs-target=#item-3 aria-expanded=false>
+                                <span class=text>Will I get a certificate after completing the course? </span><span
+                                    class=icon></span>
+                            </h4>
                             <div id=item-3 class="accordion-collapse collapse">
-                                <div class=faq_accordion-item_body>Nam quis facilisis magna, sit amet posuere tellus.
-                                    Donec imperdiet tortor vitae pharetra congue. Aliquam nunc est, iaculis in erat
-                                    lobortis, convallis varius mi. Orci varius natoque penatibus et magnis dis
-                                    parturient montes, nascetur ridiculus mus. Aliquam vel suscipit nisi, et imperdiet
-                                    nulla. Praesent condimentum metus aliquet venenatis feugiat. Nunc at iaculis nisl.
-                                    Donec ultrices placerat euismod</div>
+                                <div class=faq_accordion-item_body>
+                                    Absolutely! Every student completing a course at DynamicStaccato receives a
+                                    <strong>certificate of completion</strong>, recognizing your skills and progress.
+                                    This can be helpful for auditions, competitions, and future career opportunities.
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div><a class="faq_btn btn--arrow" href=faq.html>View all<i
-                        class="icon-arrow-right-solid icon"></i></a>
+
+                    <!-- FAQ 4 -->
+                    <div class=faq_accordion-item>
+                        <div class=item-wrapper>
+                            <h4 class="faq_accordion-item_header d-flex justify-content-between align-items-center collapsed"
+                                data-bs-toggle=collapse data-bs-target=#item-4 aria-expanded=false>
+                                <span class=text>Do you conduct student performances or concerts? </span><span
+                                    class=icon></span>
+                            </h4>
+                            <div id=item-4 class="accordion-collapse collapse">
+                                <div class=faq_accordion-item_body>
+                                    Yes, we regularly organize <strong>student recitals, concerts, and
+                                        competitions</strong>.
+                                    These events help students showcase their talent, build stage confidence,
+                                    and experience the joy of live performance.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <a class="faq_btn btn--arrow" href=faq.html>View all<i class="icon-arrow-right-solid icon"></i></a> -->
             </div>
         </section>
     </main>
@@ -444,6 +458,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<!-- Mirrored from html.merku.love/edison/pricing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:38 GMT -->
+<!-- Mirrored from html.merku.love/DynamicStaccato/pricing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:38 GMT -->
 
 </html>

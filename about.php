@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang=en>
-<!-- Mirrored from html.merku.love/edison/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:33 GMT -->
+<!-- Mirrored from html.merku.love/DynamicStaccato/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:33 GMT -->
 
 <head>
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
     <meta http-equiv=X-UA-Compatible content="ie=edge">
-    <title>About | Edison</title>
+    <title>About | DynamicStaccato</title>
     <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async="">
     </script>
     <script src=https://www.youtube.com/player_api></script>
@@ -14,7 +14,7 @@
     <link rel="stylesheet preload" as=style href=css/icomoon.css>
     <link rel="stylesheet preload" as=style href=css/libs.min.css>
     <link rel=stylesheet href=css/about.min.css>
-    <link rel=stylesheet href=css/floatbutton.min.css>
+    <!--  -->
 </head>
 
 <body>
@@ -144,35 +144,32 @@
             </div>
 
             <!-- Academy Image -->
-            <div class="infoblock_block col-lg-6" data-order=3>
+            <div class="infoblock_block col-lg-6" data-order="3">
                 <div class="parallax">
-                    <div class="img">
-                        <picture>
-                            <source data-srcset="img/about/infoblock3.webp" srcset="img/about/infoblock3.webp">
-                            <img class="lazy" data-src="img/about/infoblock3.jpg" src="img/about/infoblock3.jpg"
-                                alt="Music Learning">
-                        </picture>
+                    <div class="video-container">
+                        <video width="100%" height="auto" controls autoplay muted loop playsinline>
+                            <source src="img/danyv.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
 
+
+
             <!-- Discount Offer -->
             <div class="infoblock_block col-lg-6 infoblock_block--sale d-flex flex-column justify-content-center align-items-center"
                 data-order=4>
-                <div class="content d-flex flex-column flex-sm-row align-items-center align-items-sm-start">
-                    <span class="content_percent">50%</span>
-                    <div class="content_text d-flex flex-column align-items-center align-items-xl-start">
-                        <h3 class="title"><span class="percent">50%</span> Off on First Course</h3>
-                        <p class="text">
-                            Enroll today and enjoy <strong>50% off</strong> on your first music course.
-                            Get unlimited access to notes, practice tracks, and live mentoring sessions.
-                        </p>
-                    </div>
+                <div class="content d-flex flex-column align-items-center text-center">
+                    <h2 class="infoblock_block-header h1" style="color: white">🎵 To Learn Music, Contact Us!</h2>
+                    <p class="infoblock_block-text" style="color: white">
+                        Begin your musical journey with DynamicStaccato Musical Academy.
+                        Learn from professionals and explore your talent in a creative environment.
+                    </p>
+                    <a href="contacts.php" class="btn btn--gradient mt-3">
+                        <span class="text">Contact Us</span>
+                    </a>
                 </div>
-                <form class="form d-flex flex-column flex-sm-row" action="#" method="post" data-type="subscription">
-                    <input class="field required" type="text" data-type="email" placeholder="Subscribe by e-mail">
-                    <button class="btn btn--gradient" type="submit"><span class="text">Join Now</span></button>
-                </form>
             </div>
         </section>
 
@@ -424,6 +421,6 @@
     gtag('config', 'G-J2SRB925J5');
     </script>
 </body>
-<!-- Mirrored from html.merku.love/edison/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:37 GMT -->
+<!-- Mirrored from html.merku.love/DynamicStaccato/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:37 GMT -->
 
 </html>

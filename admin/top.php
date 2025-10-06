@@ -5,7 +5,7 @@
             <i class='bx bx-menu'></i>
         </div>
 
-        <h5 class="ms-3">Zenview</h5>
+        <h5 class="ms-3">DynamicStaccato</h5>
 
         <div class="top-menu ms-auto d-flex align-items-center">
             <!-- Logout button -->

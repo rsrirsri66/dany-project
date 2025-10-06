@@ -11,7 +11,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="assets/images/zenvic.png" type="image/png"/>
+	<link rel="icon" href="assets/images/logomusic.png" type="image/png"/>
 	<!--plugins-->
 	<link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
 	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 	
-	<title>Zenview</title>   
+	<title>DynamicStaccato</title>   
 	
 	<style>
 
