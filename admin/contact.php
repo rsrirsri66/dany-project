@@ -39,7 +39,7 @@ include("url.php");
             <div class="page-title-box">
                 
                 <div class="page-title-right">
-                    <h3 class="page-title">Quotation List</h3>
+                    <h3 class="page-title">Contact List</h3>
                    
 
                 </div>
@@ -179,7 +179,7 @@ $(document).ready(function() {
             { "data": "name" },
             { "data": "mobile" },
             { "data": "email" },
-            { "data": "address" },
+            { "data": "inrest" },
             { "data": "message" },
             { "data": "action", "orderable": false, "searchable": false } // No sorting for actions
         ]

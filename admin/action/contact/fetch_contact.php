@@ -5,10 +5,10 @@ $request = $_POST;
 $search = ""; // Initialize variable to avoid undefined error
 
 // Define table columns
-$columns = ['id', 'name', 'email', 'mobile', 'address', 'message'];
+$columns = ['id', 'name', 'email', 'mobile', 'inrest', 'message'];
 
 // Base query
-$sql = "SELECT `id`, `name`, `email`, `mobile`, `address`, `message` FROM `contacts` WHERE status ='Active'";
+$sql = "SELECT `id`, `name`, `email`, `mobile`, `inrest`, `message` FROM `contacts` WHERE status ='Active'";
 
 // Search filter
 if (!empty($request['search']['value'])) {
@@ -44,7 +44,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         "name" => $row['name'],
         "mobile" => $row['mobile'],
         "email" => $row['email'],
-        "address" => $row['address'],
+        "inrest" => $row['inrest'],
         "message" => $row['message'],
         "action" => '
             

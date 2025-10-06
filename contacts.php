@@ -15,6 +15,9 @@
     <link rel="stylesheet preload" as=style href=css/libs.min.css>
     <link rel=stylesheet href=css/contacts.min.css>
     <link rel=stylesheet href=css/floatbutton.min.css>
+    <!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -95,21 +98,22 @@
                         Fill out the form below – our experts will guide you in starting your musical journey with us.
                     </p>
                 </div>
-                <form class="contacts_form-form" action="https://html.merku.love/edison/form.php" method="post"
+                <form class="contacts_form-form" id="contact_form"
                     data-type="contacts">
                     <div class="contacts_form-form_wrapper d-sm-flex justify-content-between">
-                        <input class="field required" type="text" data-type="email" placeholder="Your Email"
+                         <input class="field required" type="text" name="name" placeholder="Your Name" id="contactsName">
+                        <input class="field required" type="text" name="email" data-type="email" placeholder="Your Email"
                             id="contactsEmail">
-                        <input class="field required" type="text" placeholder="Your Name" id="contactsName">
+                       
                     </div>
                     <div class="contacts_form-form_wrapper d-sm-flex justify-content-between">
-                        <input class="field required" type="text" data-type="tel" placeholder="Phone Number"
+                        <input class="field required" type="text" name="mobile" data-type="tel" placeholder="Phone Number"
                             id="contactsTel">
-                        <input class="field required" type="text"
+                        <input class="field required" name="inrest" type="text"
                             placeholder="Interested Course (e.g., Piano, Guitar, Vocals)" id="contactsSubject">
                     </div>
                     <textarea class="field required"
-                        placeholder="Your message here (e.g., I want to join violin classes)" data-type="message"
+                        placeholder="Your message here (e.g., I want to join violin classes)" name="message" data-type="message"
                         id="contactsMessage"></textarea>
                     <div class="contacts_form-form_footer">
                         <div class="wrapper d-flex flex-wrap align-items-center justify-content-center">
@@ -138,6 +142,12 @@
     <script src=js/map.min.js></script>
     <script src=js/demo.js></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2SRB925J5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+
     <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -146,6 +156,62 @@
     }
     gtag('js', new Date());
     gtag('config', 'G-J2SRB925J5');
+    </script>
+
+    <script>
+        
+    $(document).ready(function () {
+    $('#contact_form').on('submit', function (e) {
+        e.preventDefault();
+
+        // Form data
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: 'admin/action/contact/insert_contact',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend: function () {
+                $('.btn--gradient').prop('disabled', true).text('Processing...');
+            },
+            success: function (response) {
+                $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
+                var data = JSON.parse(response);
+
+                if (data.status === 'success') {
+                      // Show SweetAlert based on the response
+                 if (data.status) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'success',
+                        text: response.message,
+                        timer: 2000
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.message
+                    });
+                }
+                
+                    // $('#contact_form')[0].reset();
+                    document.getElementById("contact_form").reset();
+                    // $('#addFoodForm').removeClass('was-validated');
+                
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            },
+            error: function () {
+                alert('Unexpected error occurred.');
+                $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
+            }
+        });
+    });
+    }); 
     </script>
 </body>
 <!-- Mirrored from html.merku.love/edison/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:58 GMT -->
