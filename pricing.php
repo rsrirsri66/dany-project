@@ -1,3 +1,51 @@
+<?php
+include "admin/db/dbConnection.php";
+
+// Fetch all events
+$events = [];
+$event_query = "SELECT `id`,`heading` FROM heading";
+$event_result = mysqli_query($conn, $event_query);
+
+while ($row = mysqli_fetch_assoc($event_result)) {
+    $events[$row['id']] = [
+        'id' => $row['id'],
+        'name' => $row['heading'],
+        'images' => []
+    ];
+}
+
+// Fetch all images and group under event_id
+$image_query = "SELECT `heading` as heading_id, `image` FROM `images` WHERE image_status ='Active'";
+$image_result = mysqli_query($conn, $image_query);
+
+while ($row = mysqli_fetch_assoc($image_result)) {
+    $events[$row['heading_id']]['images'][] = $row['image'];
+}
+
+
+// Fetch all events
+$video_events = [];
+$video_event_query = "SELECT `id`, `heading` FROM `heading` WHERE status='Active';";
+$video_event_result = mysqli_query($conn, $video_event_query);
+
+while ($video_row = mysqli_fetch_assoc($video_event_result)) {
+    $video_events[$video_row['id']] = [
+        'id' => $video_row['id'],
+        'name' => $video_row['heading'],
+        'videos' => []
+    ];
+}
+
+// Fetch all videos grouped by event
+$video_query = "SELECT `id`, heading as heading_id, `video` FROM `video` WHERE video_status='Active'";
+$video_result = mysqli_query($conn, $video_query);
+
+while ($video_row = mysqli_fetch_assoc($video_result)) {
+    $video_events[$video_row['heading_id']]['videos'][] = $video_row['video'];
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang=en>
 <!-- Mirrored from html.merku.love/edison/pricing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:37 GMT -->
@@ -57,6 +105,40 @@
     .media-popup-close:hover {
         color: red;
     }
+    /* Card wrapper styling */
+/* Card wrapper styling */
+.pricing_list-card {
+    width: 100%;
+    max-width: 350px;   /* Consistent card width */
+    margin: 0 auto;
+}
+
+.card-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+/* Common media styling for both video and image */
+.card-wrapper video,
+.card-wrapper img {
+    width: 100%;
+    height: 220px;       /* Fixed height for all */
+    object-fit: cover;   /* Crop nicely */
+    border-radius: 0;
+}
+
+
     </style>
 </head>
 
@@ -89,264 +171,120 @@
             </div>
             </div>
         </section>
-        <section class="pricing">
-            <div class="container">
-                <div class="pricing_header">
-                    <h2 class="pricing_header-title">Our Events Photos</h2>
+       <section class="pricing">
+    <div class="container">
+        <div class="pricing_header">
+            <h2 class="pricing_header-title">Our Events Photos</h2>
+        </div>
+
+        <!-- Tabs -->
+        <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
+            <?php 
+            $first = true;
+            foreach ($events as $event) { ?>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link <?= $first ? 'active' : '' ?>" 
+                            id="tab-<?= $event['id'] ?>" 
+                            data-bs-toggle="tab"
+                            data-bs-target="#photos-<?= $event['id'] ?>" 
+                            type="button" role="tab"
+                            aria-controls="photos-<?= $event['id'] ?>" 
+                            aria-selected="<?= $first ? 'true' : 'false' ?>">
+                        <span class="nav-link_text"><?= htmlspecialchars($event['name']) ?></span>
+                    </button>
+                </li>
+            <?php $first = false; } ?>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <?php 
+            $first = true;
+            foreach ($events as $event) { ?>
+                <div class="tab-pane fade <?= $first ? 'show active' : '' ?>" 
+                     id="photos-<?= $event['id'] ?>" 
+                     role="tabpanel" 
+                     aria-labelledby="tab-<?= $event['id'] ?>">
+                    <ul class="pricing_list d-md-flex flex-wrap">
+                        <?php foreach ($event['images'] as $img) { ?>
+                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
+                                <div class="card-wrapper">
+                                    <div class="top top--basic">
+                                        <h5 class="top_title"><?= htmlspecialchars($event['name']) ?> Celebration</h5>
+                                    </div>
+                                    <div class="main">
+                                        <img src="admin/<?= $img ?>" class="img-fluid rounded w-100" alt="<?= $event['name'] ?> Image">
+                                    </div>
+                                </div>
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </div>
+            <?php $first = false; } ?>
+        </div>
+    </div>
+</section>
 
-                <!-- Tab Navigation -->
-                <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="diwali-tab" data-bs-toggle="tab"
-                            data-bs-target="#diwali-photos" type="button" role="tab" aria-controls="diwali-photos"
-                            aria-selected="true">
-                            <span class="nav-link_text">Diwali Events</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="christmas-tab" data-bs-toggle="tab"
-                            data-bs-target="#christmas-photos" type="button" role="tab" aria-controls="christmas-photos"
-                            aria-selected="false">
-                            <span class="nav-link_text">Christmas</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="newyear-tab" data-bs-toggle="tab" data-bs-target="#newyear-photos"
-                            type="button" role="tab" aria-controls="newyear-photos" aria-selected="false">
-                            <span class="nav-link_text">New Year</span>
-                        </button>
-                    </li>
-                </ul>
-
-                <!-- Tab Content -->
-                <div class="tab-content">
-
-                    <!-- Diwali Photos -->
-                    <div class="tab-pane fade show active" id="diwali-photos" role="tabpanel"
-                        aria-labelledby="diwali-tab">
-                        <ul class="pricing_list d-md-flex flex-wrap">
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--basic">
-                                        <h5 class="top_title">Diwali Celebration</h5>
-                                    </div>
-                                    <div class="main">
-                                        <img src="img/diwali1.jpg" class="img-fluid rounded w-100" alt="Diwali Image">
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--basic">
-                                        <h5 class="top_title">Diwali Celebration</h5>
-                                    </div>
-                                    <div class="main">
-                                        <img src="img/diwali2.jpg" class="img-fluid rounded w-100" alt="Diwali Image">
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--basic">
-                                        <h5 class="top_title">Diwali Celebration</h5>
-                                    </div>
-                                    <div class="main">
-                                        <img src="img/diwali2.jpg" class="img-fluid rounded w-100" alt="Diwali Image">
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Christmas Photos -->
-                    <div class="tab-pane fade" id="christmas-photos" role="tabpanel" aria-labelledby="christmas-tab">
-                        <ul class="pricing_list d-md-flex flex-wrap">
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--basic">
-                                        <h5 class="top_title">Christmas Celebration</h5>
-                                    </div>
-                                    <div class="main">
-                                        <img src="img/christmas1.jpg" class="img-fluid rounded w-100"
-                                            alt="Christmas Image">
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--basic">
-                                        <h5 class="top_title">Diwali Celebration</h5>
-                                    </div>
-                                    <div class="main">
-                                        <img src="img/diwali2.jpg" class="img-fluid rounded w-100" alt="Diwali Image">
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- New Year Photos -->
-                    <div class="tab-pane fade" id="newyear-photos" role="tabpanel" aria-labelledby="newyear-tab">
-                        <ul class="pricing_list d-md-flex flex-wrap">
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--basic">
-                                        <h5 class="top_title">New Year Celebration</h5>
-                                    </div>
-                                    <div class="main">
-                                        <img src="img/newyear1.jpg" class="img-fluid rounded w-100"
-                                            alt="New Year Image">
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--basic">
-                                        <h5 class="top_title">Diwali Celebration</h5>
-                                    </div>
-                                    <div class="main">
-                                        <img src="img/diwali2.jpg" class="img-fluid rounded w-100" alt="Diwali Image">
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
 
         <!-- Second Section (Videos) -->
         <section class="pricing">
-            <div class="container">
-                <div class="pricing_header">
-                    <h2 class="pricing_header-title">Our Events Videos</h2>
+    <div class="container">
+        <div class="pricing_header">
+            <h2 class="pricing_header-title">Our Events Videos</h2>
+        </div>
+
+        <!-- Tabs -->
+        <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
+            <?php 
+            $first = true;
+            foreach ($events as $event) { ?>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link <?= $first ? 'active' : '' ?>"
+                            id="tab-video-<?= $event['id'] ?>"
+                            data-bs-toggle="tab"
+                            data-bs-target="#videos-<?= $event['id'] ?>"
+                            type="button"
+                            role="tab"
+                            aria-controls="videos-<?= $event['id'] ?>"
+                            aria-selected="<?= $first ? 'true' : 'false' ?>">
+                        <span class="nav-link_text"><?= htmlspecialchars($event['name']) ?></span>
+                    </button>
+                </li>
+            <?php $first = false; } ?>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <?php 
+            $first = true;
+            foreach ($video_events as $video_event) { ?>
+                <div class="tab-pane fade <?= $first ? 'show active' : '' ?>"
+                     id="videos-<?= $video_event['id'] ?>"
+                     role="tabpanel"
+                     aria-labelledby="tab-video-<?= $video_event['id'] ?>">
+                    <ul class="pricing_list d-md-flex flex-wrap">
+                        <?php foreach ($video_event['videos'] as $video) { ?>
+                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
+                                <div class="card-wrapper">
+                                    <div class="top top--advanced">
+                                        <h5 class="top_title"><?= htmlspecialchars($event['name']) ?> Performance</h5>
+                                    </div>
+                                    <div class="main">
+                                        <video class="w-100 rounded" controls>
+                                            <source src="admin/<?= $video ?>" type="video/mp4">
+                                            Your browser does not support video.
+                                        </video>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </div>
+            <?php $first = false; } ?>
+        </div>
+    </div>
+</section>
 
-                <!-- Tab Navigation -->
-                <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="diwali-video-tab" data-bs-toggle="tab"
-                            data-bs-target="#diwali-videos" type="button" role="tab" aria-controls="diwali-videos"
-                            aria-selected="true">
-                            <span class="nav-link_text">Diwali Events</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="christmas-video-tab" data-bs-toggle="tab"
-                            data-bs-target="#christmas-videos" type="button" role="tab" aria-controls="christmas-videos"
-                            aria-selected="false">
-                            <span class="nav-link_text">Christmas</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="newyear-video-tab" data-bs-toggle="tab"
-                            data-bs-target="#newyear-videos" type="button" role="tab" aria-controls="newyear-videos"
-                            aria-selected="false">
-                            <span class="nav-link_text">New Year</span>
-                        </button>
-                    </li>
-                </ul>
-
-                <!-- Tab Content -->
-                <div class="tab-content">
-
-                    <!-- Diwali Videos -->
-                    <div class="tab-pane fade show active" id="diwali-videos" role="tabpanel"
-                        aria-labelledby="diwali-video-tab">
-                        <ul class="pricing_list d-md-flex flex-wrap">
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--advanced">
-                                        <h5 class="top_title">Diwali Performance</h5>
-                                    </div>
-                                    <div class="main">
-                                        <video class="w-100 rounded" controls>
-                                            <source src="videos/diwali1.mp4" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--advanced">
-                                        <h5 class="top_title">Diwali Performance</h5>
-                                    </div>
-                                    <div class="main">
-                                        <video class="w-100 rounded" controls>
-                                            <source src="videos/diwali1.mp4" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--advanced">
-                                        <h5 class="top_title">Diwali Performance</h5>
-                                    </div>
-                                    <div class="main">
-                                        <video class="w-100 rounded" controls>
-                                            <source src="videos/diwali1.mp4" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--advanced">
-                                        <h5 class="top_title">Diwali Performance</h5>
-                                    </div>
-                                    <div class="main">
-                                        <video class="w-100 rounded" controls>
-                                            <source src="videos/diwali1.mp4" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Christmas Videos -->
-                    <div class="tab-pane fade" id="christmas-videos" role="tabpanel"
-                        aria-labelledby="christmas-video-tab">
-                        <ul class="pricing_list d-md-flex flex-wrap">
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--advanced">
-                                        <h5 class="top_title">Christmas Performance</h5>
-                                    </div>
-                                    <div class="main">
-                                        <video class="w-100 rounded" controls>
-                                            <source src="videos/christmas1.mp4" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- New Year Videos -->
-                    <div class="tab-pane fade" id="newyear-videos" role="tabpanel" aria-labelledby="newyear-video-tab">
-                        <ul class="pricing_list d-md-flex flex-wrap">
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--advanced">
-                                        <h5 class="top_title">New Year Performance</h5>
-                                    </div>
-                                    <div class="main">
-                                        <video class="w-100 rounded" controls>
-                                            <source src="videos/newyear1.mp4" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
 
 
 
