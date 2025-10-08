@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="assets/images/zenvic.png" type="image/png"/>
+	<link rel="icon" href="assets/images/logomusic.png" type="image/png"/>
 	<!--plugins-->
 	<link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
 	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 	
-	<title>Zenview</title>   
+	<title>DynamicStaccato</title>   
 	
 	<style>
 		.modal-body {
@@ -166,10 +166,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 							<div class="card-body">
 								<div class="p-4">
 									<div class="mb-3 text-center">
-										<img src="assets\img\Zenvue_logo.png" width="60" alt="" />
+										<img src="assets\images\logomusic.png" width="60" alt="" />
 									</div>
 									<div class="text-center mb-4">
-										<h5 class="">Zenview Admin</h5>
+										<h5 class="">DynamicStaccato Admin</h5>
 										<p class="mb-0">Please log in to your account</p>
 									</div>
 									<div class="form-body">

@@ -8,7 +8,7 @@
                 <div class="logo logo--footer">
                     <a class="d-inline-flex align-items-center" href="index.php">
                         <span class="logo_picture">
-                            <img src="images/logo.png" alt="DynamicStaccato">
+                            <img src="svg/logomusic.png" alt="DynamicStaccato">
                         </span>
                         <span class="text">
                             <span class="brand">Dynamic</span> 
@@ -22,19 +22,19 @@
                 </p>
                 <ul class="footer_block-socials d-flex align-items-center">
                     <li class="footer_block-socials_item">
-                        <a class="link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="icon-facebook"></i></a>
+                        <a class="link" href=# target="_blank" rel="noopener noreferrer"><i class="icon-facebook"></i></a>
                     </li>
                     <li class="footer_block-socials_item">
-                        <a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="icon-instagram"></i></a>
+                        <a class="link" href="https://www.instagram.com/dynamicstaccato/?utm_source=qr&igsh=OHYxZW4weTI4bXJ4#" target="_blank" rel="noopener noreferrer"><i class="icon-instagram"></i></a>
                     </li>
                     <li class="footer_block-socials_item">
-                        <a class="link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="icon-youtube"></i></a>
+                        <a class="link" href=# target="_blank" rel="noopener noreferrer"><i class="icon-youtube"></i></a>
                     </li>
                 </ul>
                 <div class="wrapper d-flex flex-column">
                     <a class="link link--contacts text text--sm d-inline-flex align-items-center"
-                        href="mailto:info@dynamicstaccato.com">
-                        <i class="icon-envelope icon"></i> info@dynamicstaccato.com 
+                        href="mailto:dynamicstaccato@gmail.com">
+                        <i class="icon-envelope icon"></i> dynamicstaccato@gmail.com 
                     </a>
                     <a class="link link--contacts text text--sm d-inline-flex align-items-center"
                         href="tel:+919876543210">
@@ -64,10 +64,10 @@
                         <span class="marker"></span> <a class="link" href="#">Piano for Beginners</a>
                     </li>
                     <li class="footer_block-list_item d-flex align-items-baseline">
-                        <span class="marker"></span> <a class="link" href="#">Acoustic & Electric Guitar</a>
+                        <span class="marker"></span> <a class="link" href="#">Guitar</a>
                     </li>
                     <li class="footer_block-list_item d-flex align-items-baseline">
-                        <span class="marker"></span> <a class="link" href="#">Indian & Western Vocals</a>
+                        <span class="marker"></span> <a class="link" href="#">Vocals</a>
                     </li>
                 </ul>
             </div>
@@ -76,17 +76,17 @@
             <div class="footer_block col-sm-6 col-lg-auto" data-order="4">
                 <h5 class="footer_block-header">Instagram:</h5>
                 <ul class="footer_block-instagram d-grid">
-                    <li class="footer_block-instagram_item"><a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="img/footer/01.jpg" alt="Music Academy">
+                    <li class="footer_block-instagram_item"><a class="link" href="https://www.instagram.com/dynamicstaccato/?utm_source=qr&igsh=OHYxZW4weTI4bXJ4#" target="_blank" rel="noopener noreferrer">
+                        <img src="img/footer/dany.png" alt="Music Academy">
                     </a></li>
-                    <li class="footer_block-instagram_item"><a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="img/footer/02.jpg" alt="Live Performance">
+                    <li class="footer_block-instagram_item"><a class="link" href="https://www.instagram.com/dynamicstaccato/?utm_source=qr&igsh=OHYxZW4weTI4bXJ4#" target="_blank" rel="noopener noreferrer">
+                        <img src="img/footer/dany1.png" alt="Live Performance">
                     </a></li>
-                    <li class="footer_block-instagram_item"><a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="img/footer/03.jpg" alt="Students Training">
+                    <li class="footer_block-instagram_item"><a class="link" href="https://www.instagram.com/dynamicstaccato/?utm_source=qr&igsh=OHYxZW4weTI4bXJ4#" target="_blank" rel="noopener noreferrer">
+                        <img src="img/footer/dany2.png" alt="Students Training">
                     </a></li>
-                    <li class="footer_block-instagram_item"><a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="img/footer/04.jpg" alt="Guitar Practice">
+                    <li class="footer_block-instagram_item"><a class="link" href="https://www.instagram.com/dynamicstaccato/?utm_source=qr&igsh=OHYxZW4weTI4bXJ4#" target="_blank" rel="noopener noreferrer">
+                        <img src="img/footer/dany3.png" alt="Guitar Practice">
                     </a></li>
                 </ul>
             </div>
@@ -96,7 +96,7 @@
     <!-- Footer Bottom -->
     <div class="footer_secondary">
         <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-sm-between">
-            <a class="footer_secondary-scroll" id="scrollToTop" href="#"><i class="icon-angle-up icon"></i></a>
+            <!-- <a class="footer_secondary-scroll" id="scrollToTop" href="#"><i class="icon-angle-up icon"></i></a> -->
             <p class="footer_secondary-copyright">
                 © <span id="currentYear"></span> DynamicStaccato Musical Academy | All Rights Reserved
             </p>

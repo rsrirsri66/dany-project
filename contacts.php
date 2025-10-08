@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang=en>
-<!-- Mirrored from html.merku.love/edison/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:57 GMT -->
+<!-- Mirrored from html.merku.love/DynamicStaccato/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:57 GMT -->
 
 <head>
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1">
     <meta http-equiv=X-UA-Compatible content="ie=edge">
-    <title>Contact Us | Edison</title>
+    <title>Contact Us | DynamicStaccato</title>
     <script id=www-widgetapi-script src=../../s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js async="">
     </script>
     <script src=https://www.youtube.com/player_api></script>
@@ -14,7 +14,7 @@
     <link rel="stylesheet preload" as=style href=css/icomoon.css>
     <link rel="stylesheet preload" as=style href=css/libs.min.css>
     <link rel=stylesheet href=css/contacts.min.css>
-    <link rel=stylesheet href=css/floatbutton.min.css>
+    
     <!-- CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
@@ -45,20 +45,7 @@
                     </p>
                 </div>
                 <ul class="page_main-list d-sm-flex flex-wrap justify-content-center">
-                    <li class="page_main-list_item" data-aos="fade-up">
-                        <div class="wrapper">
-                            <div class="content d-flex justify-content-sm-center">
-                                <i class="icon-map-marker-alt-solid icon"></i>
-                                <div class="block">
-                                    <span class="content_text text">
-                                        DynamicStaccato Musical Academy,<br>
-                                        Opposite RVS Arts & Science College,<br>
-                                        
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                   
                     <li class="page_main-list_item" data-aos="fade-up" data-aos-delay="50">
                         <div class="wrapper">
                             <div class="content d-flex justify-content-sm-center">
@@ -66,6 +53,20 @@
                                 <div class="block d-flex flex-column">
                                     <a class="content_link text" href="tel:+919876543210">+91 98765 43210</a>
                                     <a class="content_link text" href="tel:+919812345678">+91 98123 45678</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                     <li class="page_main-list_item" data-aos="fade-up">
+                        <div class="wrapper">
+                            <div class="content d-flex justify-content-sm-center">
+                                <i class="icon-map-marker-alt-solid icon"></i>
+                                <div class="block">
+                                    <span class="content_text text">
+                                        <!-- DynamicStaccato Musical Academy,<br> -->
+                                        No 2/484 selvam house 1st floor ,dr Ambedkar nagar, manapakkam, chennai -600125<br>
+                                        
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +116,7 @@
                     <textarea class="field required"
                         placeholder="Your message here (e.g., I want to join violin classes)" name="message" data-type="message"
                         id="contactsMessage"></textarea>
-                    <div class="contacts_form-form_footer">
+                    <!-- <div class="contacts_form-form_footer">
                         <div class="wrapper d-flex flex-wrap align-items-center justify-content-center">
                             <div class="checkbox">
                                 <input type="checkbox" name="dataProcessing" id="dataProcessing" checked="checked">
@@ -123,7 +124,7 @@
                                     processing.</label>
                             </div>
                             <a class="link" href="#">Terms and Conditions</a>
-                        </div>
+                        </div> -->
                         <button class="btn btn--gradient" type="submit">
                             <span class="text">Send a Message</span>
                         </button>
@@ -214,6 +215,6 @@
     }); 
     </script>
 </body>
-<!-- Mirrored from html.merku.love/edison/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:58 GMT -->
+<!-- Mirrored from html.merku.love/DynamicStaccato/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:58 GMT -->
 
 </html>

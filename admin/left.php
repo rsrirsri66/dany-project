@@ -5,9 +5,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
       <div class="sidebar-wrapper">
     <div class="sidebar-header">
         <div>
-            <img src="assets/images/zenvic.png" alt="Logo" style="height:40px;">
+            <img src="assets/images/logomusic.png" alt="Logo" style="height:40px;">
         </div>
-        <h4 class="logo-text">Zenview</h4>
+        <h4 class="logo-text">Dynamic<br>Staccato</h4>
         <div class="toggle-icon"><i class='bx bx-menu'></i></div>
     </div>
  
