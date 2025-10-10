@@ -14,9 +14,9 @@
     <link rel="stylesheet preload" as=style href=css/icomoon.css>
     <link rel="stylesheet preload" as=style href=css/libs.min.css>
     <link rel=stylesheet href=css/contacts.min.css>
-    
+
     <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 </head>
 
@@ -45,7 +45,7 @@
                     </p>
                 </div>
                 <ul class="page_main-list d-sm-flex flex-wrap justify-content-center">
-                   
+
                     <li class="page_main-list_item" data-aos="fade-up" data-aos-delay="50">
                         <div class="wrapper">
                             <div class="content d-flex justify-content-sm-center">
@@ -57,15 +57,16 @@
                             </div>
                         </div>
                     </li>
-                     <li class="page_main-list_item" data-aos="fade-up">
+                    <li class="page_main-list_item" data-aos="fade-up">
                         <div class="wrapper">
                             <div class="content d-flex justify-content-sm-center">
                                 <i class="icon-map-marker-alt-solid icon"></i>
                                 <div class="block">
                                     <span class="content_text text">
                                         <!-- DynamicStaccato Musical Academy,<br> -->
-                                        No 2/484 selvam house 1st floor ,dr Ambedkar nagar, manapakkam, chennai -600125<br>
-                                        
+                                        No 2/484 selvam house 1st floor ,dr Ambedkar nagar, manapakkam, chennai
+                                        -600125<br>
+
                                     </span>
                                 </div>
                             </div>
@@ -99,23 +100,22 @@
                         Fill out the form below – our experts will guide you in starting your musical journey with us.
                     </p>
                 </div>
-                <form class="contacts_form-form" id="contact_form"
-                    data-type="contacts">
+                <form class="contacts_form-form" id="contact_form" data-type="contacts">
                     <div class="contacts_form-form_wrapper d-sm-flex justify-content-between">
-                         <input class="field required" type="text" name="name" placeholder="Your Name" id="contactsName">
-                        <input class="field required" type="text" name="email" data-type="email" placeholder="Your Email"
-                            id="contactsEmail">
-                       
+                        <input class="field required" type="text" name="name" placeholder="Your Name" id="contactsName">
+                        <input class="field required" type="text" name="email" data-type="email"
+                            placeholder="Your Email" id="contactsEmail">
+
                     </div>
                     <div class="contacts_form-form_wrapper d-sm-flex justify-content-between">
-                        <input class="field required" type="text" name="mobile" data-type="tel" placeholder="Phone Number"
-                            id="contactsTel">
+                        <input class="field required" type="text" name="mobile" data-type="tel"
+                            placeholder="Phone Number" id="contactsTel">
                         <input class="field required" name="inrest" type="text"
                             placeholder="Interested Course (e.g., Piano, Guitar, Vocals)" id="contactsSubject">
                     </div>
                     <textarea class="field required"
-                        placeholder="Your message here (e.g., I want to join violin classes)" name="message" data-type="message"
-                        id="contactsMessage"></textarea>
+                        placeholder="Your message here (e.g., I want to join violin classes)" name="message"
+                        data-type="message" id="contactsMessage"></textarea>
                     <!-- <div class="contacts_form-form_footer">
                         <div class="wrapper d-flex flex-wrap align-items-center justify-content-center">
                             <div class="checkbox">
@@ -125,11 +125,11 @@
                             </div>
                             <a class="link" href="#">Terms and Conditions</a>
                         </div> -->
-                        <button class="btn btn--gradient" type="submit">
-                            <span class="text">Send a Message</span>
-                        </button>
-                    </div>
-                </form>
+                    <button class="btn btn--gradient" type="submit">
+                        <span class="text">Send a Message</span>
+                    </button>
+            </div>
+            </form>
             </div>
         </section>
         <!-- <div class="contacts_map">
@@ -146,7 +146,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
 
     <script>
@@ -160,59 +160,58 @@
     </script>
 
     <script>
-        
-    $(document).ready(function () {
-    $('#contact_form').on('submit', function (e) {
-        e.preventDefault();
+    $(document).ready(function() {
+        $('#contact_form').on('submit', function(e) {
+            e.preventDefault();
 
-        // Form data
-        var formData = new FormData(this);
+            // Form data
+            var formData = new FormData(this);
 
-        $.ajax({
-            url: 'admin/action/contact/insert_contact',
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            beforeSend: function () {
-                $('.btn--gradient').prop('disabled', true).text('Processing...');
-            },
-            success: function (response) {
-                $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
-                var data = JSON.parse(response);
+            $.ajax({
+                url: 'admin/action/contact/insert_contact',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function() {
+                    $('.btn--gradient').prop('disabled', true).text('Processing...');
+                },
+                success: function(response) {
+                    $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
+                    var data = JSON.parse(response);
 
-                if (data.status === 'success') {
-                      // Show SweetAlert based on the response
-                 if (data.status) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'success',
-                        text: response.message,
-                        timer: 2000
-                    });
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: response.message
-                    });
+                    if (data.status === 'success') {
+                        // Show SweetAlert based on the response
+                        if (data.status) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'success',
+                                text: response.message,
+                                timer: 2000
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message
+                            });
+                        }
+
+                        // $('#contact_form')[0].reset();
+                        document.getElementById("contact_form").reset();
+                        // $('#addFoodForm').removeClass('was-validated');
+
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                },
+                error: function() {
+                    alert('Unexpected error occurred.');
+                    $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
                 }
-                
-                    // $('#contact_form')[0].reset();
-                    document.getElementById("contact_form").reset();
-                    // $('#addFoodForm').removeClass('was-validated');
-                
-                } else {
-                    alert('Error: ' + data.message);
-                }
-            },
-            error: function () {
-                alert('Unexpected error occurred.');
-                $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
-            }
+            });
         });
     });
-    }); 
     </script>
 </body>
 <!-- Mirrored from html.merku.love/DynamicStaccato/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:09:58 GMT -->

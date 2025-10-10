@@ -1175,7 +1175,7 @@ input[type=search]::-webkit-search-results-decoration {
 
 .header {
     background-color: #fff;
-    z-index: 100000;
+    z-index: 1000;
     will-change: transform;
     -webkit-transition: .4s ease-in-out;
     -o-transition: .4s ease-in-out;
