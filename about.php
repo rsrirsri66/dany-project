@@ -20,7 +20,73 @@
 <body>
     <?php include 'header.php' ; ?>
     <main>
-        <div class="features">
+<body style="margin:0; padding:0; font-family:'Poppins', sans-serif; color:#fff;">
+  <section style="
+    min-height:100vh;
+    background-color:#5C00D2; 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:80px 20px;
+  ">
+    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; max-width:1200px; margin:auto;">
+      
+      <!-- Left Image -->
+      <div style="flex:1 1 350px; text-align:center; margin-bottom:30px;">
+        <img 
+          src="admin/action/image/in.avif" 
+          alt="Founder Image" 
+          style="width:300px; height:300px; object-fit:cover; border-radius:50%; box-shadow:0 8px 20px rgba(0,0,0,0.3);"
+        />
+      </div>
+
+      <!-- Right Content -->
+      <div style="flex:1 1 550px; text-align:left; padding:0 20px;">
+        <h2 style="font-size:3.5rem; font-weight:800; text-transform:uppercase; letter-spacing:2px; margin-bottom:30px; text-align:left; color:#fff;">
+          About Us
+        </h2>
+
+        <p style="font-size:1.1rem; line-height:1.8; margin-bottom:25px;">
+          <strong>Where Every Note Inspires Growth</strong><br />
+          At <b>Dynamic Staccato</b>, music is more than just lessons — it’s an experience of growth, creativity, and confidence. Founded by passionate musicians and educators, the academy is built on the belief that every student can shine with the right guidance and environment.
+        </p>
+
+        <p style="font-size:1.1rem; line-height:1.8; margin-bottom:25px;">
+          <strong>Our Vision:</strong><br />
+          To create a vibrant community of learners through world-class music education and performance opportunities.
+        </p>
+
+        <p style="font-size:1.1rem; line-height:1.8; margin-bottom:25px;">
+          <strong>Our Mission:</strong><br />
+          To help every learner discover their unique musical voice by offering structured, engaging, and performance-based learning.
+        </p>
+
+        <p style="font-size:1.1rem; line-height:1.8; margin-bottom:25px;">
+          <strong>Core Values:</strong><br />
+          Excellence in teaching<br />
+          Commitment to personal growth<br />
+          Innovation in approach<br />
+          Integrity and inspiration through arts
+        </p>
+
+        <p style="font-size:1.1rem; line-height:1.8; margin-bottom:25px;">
+          <strong>Our Founder:</strong><br />
+          With a strong background in Trinity College training, live performance, and music pedagogy, our founder leads a team of expert instructors dedicated to creating a modern yet soulful approach to music education in Chennai.
+        </p>
+
+        <button 
+          style="color:#fff; border:2px solid #fff; border-radius:50px; padding:12px 30px; font-weight:600; text-transform:uppercase; background:transparent; transition:0.3s; cursor:pointer;"
+          onmouseover="this.style.background='#fff'; this.style.color='#5C00D2';"
+          onmouseout="this.style.background='transparent'; this.style.color='#fff';"
+        >
+          Meet the Faculty
+        </button>
+      </div>
+    </div>
+  </section>
+</body>
+
+        <!-- <div class="features">
             <div class="container">
                 <ul class="features_list d-md-flex flex-wrap">
 
@@ -106,7 +172,7 @@
 
                 </ul>
             </div>
-        </div>
+        </div> -->
 
         <section class="infoblock d-flex flex-column flex-lg-row flex-md-wrap">
             <!-- About Music Education -->

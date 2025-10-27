@@ -90,48 +90,55 @@
         </div>
     </header>
     <main class="contacts">
-        <section class="contacts_form">
-            <div class="container">
-                <div class="contacts_form-header">
-                    <h2 class="contacts_form-header_title">Get in Touch with DynamicStaccato Musical Academy</h2>
-                    <p class="contacts_form-header_text text">
-                        Have questions about our music courses, admission process, or choosing the right instrument for
-                        you?
-                        Fill out the form below – our experts will guide you in starting your musical journey with us.
-                    </p>
-                </div>
-                <form class="contacts_form-form" id="contact_form" data-type="contacts">
-                    <div class="contacts_form-form_wrapper d-sm-flex justify-content-between">
-                        <input class="field required" type="text" name="name" placeholder="Your Name" id="contactsName">
-                        <input class="field required" type="text" name="email" data-type="email"
-                            placeholder="Your Email" id="contactsEmail">
+  <body style="margin:0; background-color:#f8f8f8; font-family:'Oswald', sans-serif; color:#000;">
 
-                    </div>
-                    <div class="contacts_form-form_wrapper d-sm-flex justify-content-between">
-                        <input class="field required" type="text" name="mobile" data-type="tel"
-                            placeholder="Phone Number" id="contactsTel">
-                        <input class="field required" name="inrest" type="text"
-                            placeholder="Interested Course (e.g., Piano, Guitar, Vocals)" id="contactsSubject">
-                    </div>
-                    <textarea class="field required"
-                        placeholder="Your message here (e.g., I want to join violin classes)" name="message"
-                        data-type="message" id="contactsMessage"></textarea>
-                    <!-- <div class="contacts_form-form_footer">
-                        <div class="wrapper d-flex flex-wrap align-items-center justify-content-center">
-                            <div class="checkbox">
-                                <input type="checkbox" name="dataProcessing" id="dataProcessing" checked="checked">
-                                <label for="dataProcessing"><i class="icon-check icon"></i> I agree to the terms of data
-                                    processing.</label>
-                            </div>
-                            <a class="link" href="#">Terms and Conditions</a>
-                        </div> -->
-                    <button class="btn btn--gradient" type="submit">
-                        <span class="text">Send a Message</span>
-                    </button>
-            </div>
-            </form>
-            </div>
-        </section>
+  <section style="max-width:900px; margin:100px auto; padding:0 20px; text-align:center;">
+
+    <!-- Headings -->
+    <h1 style="font-size:70px; font-weight:700; margin:0; letter-spacing:1px;">HAVE QUESTIONS?</h1>
+    <h2 style="font-size:48px; font-weight:700; color:#bfbfbf; margin:5px 0 10px;">WE HAVE ANSWERS!</h2>
+    <p style="color:#5C00D2; font-size:16px; font-weight:600; letter-spacing:0.5px; margin-bottom:60px;">
+      PLEASE USE OUR CONTACT FORM BELOW AND WE'LL GET BACK TO YOU AS QUICKLY AS POSSIBLE!
+    </p>
+
+    <!-- Contact Form -->
+    <form style="max-width:750px; margin:auto; text-align:left;">
+      <div style="display:flex; flex-wrap:wrap; gap:25px; margin-bottom:30px;">
+        <div style="flex:1; min-width:250px;">
+          <label style="display:block; font-size:15px; font-weight:600; margin-bottom:5px;">FIRST NAME</label>
+          <input type="text" 
+                 style="width:100%; border:none; border-bottom:2px solid #000; background:transparent; padding:8px 0; font-size:17px; outline:none;">
+        </div>
+        <div style="flex:1; min-width:250px;">
+          <label style="display:block; font-size:15px; font-weight:600; margin-bottom:5px;">LAST NAME</label>
+          <input type="text" 
+                 style="width:100%; border:none; border-bottom:2px solid #000; background:transparent; padding:8px 0; font-size:17px; outline:none;">
+        </div>
+      </div>
+
+      <div style="margin-bottom:30px;">
+        <label style="display:block; font-size:15px; font-weight:600; margin-bottom:5px;">EMAIL *</label>
+        <input type="email" 
+               style="width:100%; border:none; border-bottom:2px solid #000; background:transparent; padding:8px 0; font-size:17px; outline:none;">
+      </div>
+
+      <div style="margin-bottom:40px;">
+        <label style="display:block; font-size:15px; font-weight:600; margin-bottom:5px;">WRITE A MESSAGE</label>
+        <textarea rows="4" 
+                  style="width:100%; border:none; border-bottom:2px solid #000; background:transparent; padding:8px 0; font-size:17px; resize:none; outline:none;"></textarea>
+      </div>
+
+      <div style="text-align:center;">
+        <button type="submit"
+                style="background-color:#5C00D2; color:#fff; border:none; padding:14px 50px; border-radius:30px; font-size:18px; font-weight:700; text-transform:uppercase; cursor:pointer; transition:0.3s;">
+          SUBMIT
+        </button>
+      </div>
+    </form>
+
+  </section>
+
+</body>
         <!-- <div class="contacts_map">
         <div id="map"></div>
     </div> -->

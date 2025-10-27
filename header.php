@@ -1,4 +1,4 @@
-<div class="promobar d-flex align-items-center">
+<!-- <div class="promobar d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
         <ul class="promobar_socials d-flex align-items-center">
             <li class=promobar_socials-item><a class=link href=# target=_blank rel="noopener noreferrer"><i
@@ -10,7 +10,7 @@
         </ul>
       
     </div>
-</div>
+</div> -->
 <header class=header data-page=home>
     <div class="container d-flex flex-wrap justify-content-between align-items-center">
         <div class="logo header_logo"><a class="d-inline-flex align-items-center" href=index.php><span

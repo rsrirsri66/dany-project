@@ -1,4 +1,3 @@
-
     <footer class="footer">
     <div class="container">
         <div class="footer_wrapper d-sm-flex flex-wrap flex-lg-nowrap justify-content-lg-between">
