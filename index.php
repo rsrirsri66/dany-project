@@ -22,46 +22,86 @@
         <div class="underlay"></div>
 
         <!-- Hero Section -->
-        <section class="hero" style="background: url('img/musbg.jpg') no-repeat center center / cover; 
-           background-color: rgba(0,0,0,0.63); 
-           background-blend-mode: overlay; 
-           min-height: 100vh; 
-           display: flex; 
-           align-items: center;">
-            <div class="container d-lg-flex align-items-center">
-                <div class="hero_content">
-                    <h1 class="hero_content-header" data-aos="fade-up" style="color: white;">Master the Art of Music
-                        with DynamicStaccato</h1>
-                    <div class="hero_content-rating d-flex flex-column flex-sm-row align-items-center">
-                        <p class="text" data-aos="fade-left">Our music programs are rated excellent by 5,000+ students
-                            worldwide</p>
-                        <div class="wrapper" data-aos="fade-left" data-aos-delay="50">
-                            <ul class="rating d-flex align-items-center">
-                                <li class="rating_star"><i class="icon-star icon"></i></li>
-                                <li class="rating_star"><i class="icon-star icon"></i></li>
-                                <li class="rating_star"><i class="icon-star icon"></i></li>
-                                <li class="rating_star"><i class="icon-star icon"></i></li>
-                                <li class="rating_star"><i class="icon-star icon"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="hero_content-text" data-aos="fade-up" data-aos-delay="50" style="color: white;">
-                        Join DynamicStaccato Institute to explore Piano, Guitar, Drums, Violin, and Vocal training —
-                        from beginner to advanced, all taught by world-class musicians.
-                    </p>
-                    <div class="hero_content-action d-flex flex-wrap">
-                        <a class="btn btn--gradient" href="courses.php" data-aos="fade-left"><span class="text">Explore
-                                Courses</span></a>
-                        <a class="btn btn--highlight" href="pricing.php" data-aos="fade-left" data-aos-delay="50"><span
-                                class="text">See Events</span></a>
-                    </div>
-                </div>
-                <div class="hero_media col-lg-6">
-                    <lottie-player src="lottie/music.json" background="transparent" speed="1"
-                        style="width: 100%; height: 100%" loop autoplay></lottie-player>
-                </div>
+        <section class="hero" 
+        
+   >  
+   
+   <video autoplay muted loop playsinline
+    style="
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:-1;
+    ">
+    <source src="admin/uploads/videos/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+ 
+    <div class="container d-lg-flex align-items-center justify-content-between">
+        
+       
+        <div class="hero_content col-lg-6" style="color: white;">
+            <h1 class="hero_content-header" data-aos="fade-up" style="font-weight: 800;">
+                Learn Music. Live Music.
+            </h1>
+            <p class="hero_content-text mt-3" data-aos="fade-up" data-aos-delay="50" style="font-size: 18px; line-height: 1.8;">
+                Welcome to <strong>Dynamic Staccato School of Music</strong>, Chennai’s destination for passionate musicians and curious beginners. 
+                Located in Manapakkam, we offer structured, enjoyable, and result-driven lessons across 
+                Keyboard, Piano, Violin, Guitar, and Vocal (Carnatic & Western).
+            </p>
+            <p class="hero_content-text" data-aos="fade-up" data-aos-delay="100" style="font-size: 18px; line-height: 1.8;">
+                Whether you’re taking your first steps or preparing for certifications, our expert tutors 
+                guide you every step of the way — blending creativity, discipline, and fun.
+            </p>
+
+            <div class="hero_content-action d-flex flex-wrap mt-4">
+                <a class="btn btn--gradient me-3 mb-2" href="courses.php" data-aos="fade-left"><span class="text">Explore Courses</span></a>
+                <a class="btn btn--highlight mb-2" href="pricing.php" data-aos="fade-left" data-aos-delay="50"><span class="text">See Events</span></a>
             </div>
-        </section>
+        </div>
+
+       
+        <div class=" music-trial-form " data-aos="fade-left" >
+        <div class="music-trial-card" style="width: 400px;">    
+        <h3 class="music-trial-heading" >Schedule Your</h3>
+            <h2 class="music-trial-subheading" >Trial Session</h2>
+
+            <form>
+      <label>STUDENT NAME *</label>
+      <input type="text" required>
+
+      <label>STUDENT AGE *</label>
+      <input type="number" required>
+
+      <label>YOUR NAME *</label>
+      <input type="text" required>
+
+      <label>EMAIL *</label>
+      <input type="email" required>
+
+      <label>PHONE *</label>
+      <input type="tel" required>
+
+      <label>INSTRUMENT *</label>
+      <input type="text" required>
+
+      <button type="submit" class="music-trial-btn">SUBMIT</button>
+    </form>
+        </div>
+</div>
+    </div>
+</section>
+
+
+
+
+
+
+
 
         <!-- Features -->
         <div class="features">
@@ -325,130 +365,130 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="js/common.min.js"></script>
     <script src="js/demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script>
-    // Show popup after 2 seconds on page load
-    window.addEventListener("load", function() {
-        setTimeout(() => {
-            document.getElementById("contactPopup").style.display = "flex";
-        }, 2000);
-    });
+        // Show popup after 2 seconds on page load
+        window.addEventListener("load", function() {
+            setTimeout(() => {
+                document.getElementById("contactPopup").style.display = "flex";
+            }, 2000);
+        });
 
-    // Close popup when clicking (X)
-    document.getElementById("closePopup").addEventListener("click", function() {
-        document.getElementById("contactPopup").style.display = "none";
-    });
+        // Close popup when clicking (X)
+        document.getElementById("closePopup").addEventListener("click", function() {
+            document.getElementById("contactPopup").style.display = "none";
+        });
 
-    // Close popup if user clicks outside
-    window.addEventListener("click", function(e) {
-        const popup = document.getElementById("contactPopup");
-        if (e.target === popup) popup.style.display = "none";
-    });
+        // Close popup if user clicks outside
+        window.addEventListener("click", function(e) {
+            const popup = document.getElementById("contactPopup");
+            if (e.target === popup) popup.style.display = "none";
+        });
 
-    // Form validation
-    // document.getElementById("contact_form").addEventListener("submit", function(e) {
-    //     e.preventDefault();
-    //     let valid = true;
+        // Form validation
+        // document.getElementById("contact_form").addEventListener("submit", function(e) {
+        //     e.preventDefault();
+        //     let valid = true;
 
 
-    //     document.querySelectorAll(".error-message").forEach(el => el.innerText = "");
+        //     document.querySelectorAll(".error-message").forEach(el => el.innerText = "");
 
-    //     const name = document.querySelector('[name="name"]').value.trim();
-    //     const email = document.querySelector('[name="email"]').value.trim();
-    //     const mobile = document.querySelector('[name="mobile"]').value.trim();
-    //     const subject = document.querySelector('[name="inrest"]').value.trim();
-    //     const message = document.querySelector('[name="message"]').value.trim();
+        //     const name = document.querySelector('[name="name"]').value.trim();
+        //     const email = document.querySelector('[name="email"]').value.trim();
+        //     const mobile = document.querySelector('[name="mobile"]').value.trim();
+        //     const subject = document.querySelector('[name="inrest"]').value.trim();
+        //     const message = document.querySelector('[name="message"]').value.trim();
 
-    //     if (!name) {
-    //         document.getElementById("errorName").innerText = "Name is required";
-    //         valid = false;
-    //     }
-    //     if (!email) {
-    //         document.getElementById("errorEmail").innerText = "Email is required";
-    //         valid = false;
-    //     } else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    //         document.getElementById("errorEmail").innerText = "Invalid email format";
-    //         valid = false;
-    //     }
-    //     if (!mobile) {
-    //         document.getElementById("errorMobile").innerText = "Phone number is required";
-    //         valid = false;
-    //     } else if (!/^[0-9]{10}$/.test(mobile)) {
-    //         document.getElementById("errorMobile").innerText = "Enter a valid 10-digit phone number";
-    //         valid = false;
-    //     }
-    //     if (!subject) {
-    //         document.getElementById("errorCourse").innerText = "Please mention your interested course";
-    //         valid = false;
-    //     }
-    //     if (!message) {
-    //         document.getElementById("errorMessage").innerText = "Message cannot be empty";
-    //         valid = false;
-    //     }
+        //     if (!name) {
+        //         document.getElementById("errorName").innerText = "Name is required";
+        //         valid = false;
+        //     }
+        //     if (!email) {
+        //         document.getElementById("errorEmail").innerText = "Email is required";
+        //         valid = false;
+        //     } else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        //         document.getElementById("errorEmail").innerText = "Invalid email format";
+        //         valid = false;
+        //     }
+        //     if (!mobile) {
+        //         document.getElementById("errorMobile").innerText = "Phone number is required";
+        //         valid = false;
+        //     } else if (!/^[0-9]{10}$/.test(mobile)) {
+        //         document.getElementById("errorMobile").innerText = "Enter a valid 10-digit phone number";
+        //         valid = false;
+        //     }
+        //     if (!subject) {
+        //         document.getElementById("errorCourse").innerText = "Please mention your interested course";
+        //         valid = false;
+        //     }
+        //     if (!message) {
+        //         document.getElementById("errorMessage").innerText = "Message cannot be empty";
+        //         valid = false;
+        //     }
 
-    //     if (valid) {
-    //         alert("Thank you! Your message has been sent successfully.");
-    //         this.reset();
-    //         document.getElementById("contactPopup").style.display = "none";
-    //     }
-    // });
+        //     if (valid) {
+        //         alert("Thank you! Your message has been sent successfully.");
+        //         this.reset();
+        //         document.getElementById("contactPopup").style.display = "none";
+        //     }
+        // });
     </script>
     <script>
-    $(document).ready(function() {
-        $('#contact_form').on('submit', function(e) {
-            e.preventDefault();
+        $(document).ready(function() {
+            $('#contact_form').on('submit', function(e) {
+                e.preventDefault();
 
-            // Form data
-            var formData = new FormData(this);
+                // Form data
+                var formData = new FormData(this);
 
-            $.ajax({
-                url: 'admin/action/contact/insert_contact',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                beforeSend: function() {
-                    $('.btn--gradient').prop('disabled', true).text('Processing...');
-                },
-                success: function(response) {
-                    $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
-                    var data = JSON.parse(response);
+                $.ajax({
+                    url: 'admin/action/contact/insert_contact',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    beforeSend: function() {
+                        $('.btn--gradient').prop('disabled', true).text('Processing...');
+                    },
+                    success: function(response) {
+                        $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
+                        var data = JSON.parse(response);
 
-                    if (data.status === 'success') {
-                        // Show SweetAlert based on the response
-                        if (data.status) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'success',
-                                text: response.message,
-                                timer: 2000
-                            });
+                        if (data.status === 'success') {
+                            // Show SweetAlert based on the response
+                            if (data.status) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'success',
+                                    text: response.message,
+                                    timer: 2000
+                                });
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    text: response.message
+                                });
+                            }
+
+                            // $('#contact_form')[0].reset();
+                            document.getElementById("contact_form").reset();
+                            // $('#addFoodForm').removeClass('was-validated');
+
                         } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: response.message
-                            });
+                            alert('Error: ' + data.message);
                         }
-
-                        // $('#contact_form')[0].reset();
-                        document.getElementById("contact_form").reset();
-                        // $('#addFoodForm').removeClass('was-validated');
-
-                    } else {
-                        alert('Error: ' + data.message);
+                    },
+                    error: function() {
+                        alert('Unexpected error occurred.');
+                        $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
                     }
-                },
-                error: function() {
-                    alert('Unexpected error occurred.');
-                    $('.btn--gradient').prop('disabled', false).text('SEND A MESSAGE');
-                }
+                });
             });
         });
-    });
     </script>
 </body>
 
