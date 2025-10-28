@@ -336,7 +336,8 @@ main>.underlay:after {
 
 /* Explore Courses button (solid #420566) */
 .btn--gradient {
-    background: #420566 !important;
+    /* background: #420566 !important; */
+    background: #5C00D2 !important;
     box-shadow: none !important;
 }
 
@@ -352,18 +353,23 @@ main>.underlay:after {
 /* See Events button (outlined #420566) */
 .btn--highlight {
     background: transparent !important;
-    border: 2px solid #420566 !important;
-    color: #420566 !important;
+    /* border: 2px solid #420566 !important; */
+    border: 2px solid #5C00D2 !important;
+    color: #5C00D2 !important;
+    /* color: #420566 !important; */
     transition: all 0.3s ease-in-out;
 }
 
 .btn--highlight .text {
-    color: #420566 !important;
+    /* color: #420566 !important; */
+    color: #5C00D2 !important;
+
 }
 
 /* Hover effect for outline button */
 .btn--highlight:hover {
-    background: #420566 !important;
+    /* background: #420566 !important; */
+    background: #5C00D2 !important;
     color: #fff !important;
 }
 
@@ -1606,7 +1612,9 @@ main>.underlay {
 
 .hero_content-header {
     margin-bottom: 30px;
-    color: #420566;
+    /* color: #420566; */
+    color: #5C00D2;
+
 }
 
 .hero_content-rating {
@@ -3301,6 +3309,7 @@ textarea.field {
     justify-content: center;
     align-items: center;
     padding: 40px;
+   
 }
 
 .music-trial-card {
@@ -3313,11 +3322,13 @@ textarea.field {
     position: relative;
     margin: 0 auto;
     flex-shrink: 0;
+    z-index: 11;
 }
 
 .music-trial-heading {
-    /* color: #ff0844; */
-    color: #420566;
+
+    /* color: #420566; */
+    color: #5C00D2;
     font-weight: 700;
     font-size: 24px;
     text-transform: uppercase;
@@ -3326,8 +3337,8 @@ textarea.field {
 }
 
 .music-trial-subheading {
-    /* color: #ff0844; */
-    color: #420566;
+    /* color: #420566; */
+    color: #5C00D2;
     font-weight: 800;
     font-size: 32px;
     text-transform: uppercase;
@@ -3364,9 +3375,9 @@ textarea.field {
 }
 
 .music-trial-btn {
-    /* background: #ff8c00; */
     /* background: linear-gradient(111.41deg, #ff8b67 24.85%, #ff0844 95.39%); */
-    background: #420566;
+    /* background: #420566; */
+    background: #5C00D2;
     color: #fff;
     font-weight: 700;
     border: none;
