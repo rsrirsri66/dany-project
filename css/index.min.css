@@ -332,48 +332,45 @@ main>.underlay:after {
     box-shadow: 0 2px 7px rgba(255, 255, 255, .4)
 }
 
-.btn--gradient {
-    background: -o-linear-gradient(338.59deg, #ff0844 24.85%, #ff8b67 95.39%);
-    background: linear-gradient(111.41deg, #ff0844 24.85%, #ff8b67 95.39%);
-    position: relative;
-    overflow: hidden;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transition: .3s ease-in-out;
-    -o-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
-    -webkit-box-shadow: 0 2px 4px rgba(43, 53, 67, 0);
-    box-shadow: 0 2px 4px rgba(43, 53, 67, 0)
-}
+/* Custom Styles for Hero Buttons */
 
-.btn--gradient .text {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    line-height: 1;
-    font-size: 14px
+/* Explore Courses button (solid #420566) */
+.btn--gradient {
+    background: #420566 !important;
+    box-shadow: none !important;
 }
 
 .btn--gradient:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: -o-linear-gradient(338.59deg, #ff8b67 24.85%, #ff0844 95.39%);
-    background: linear-gradient(111.41deg, #ff8b67 24.85%, #ff0844 95.39%);
-    -webkit-transition: opacity .3s ease-in-out;
-    -o-transition: opacity .3s ease-in-out;
-    transition: opacity .3s ease-in-out;
-    opacity: 0;
-    z-index: 1
+    display: none !important;
+    /* disable gradient hover overlay */
 }
 
-.btn--gradient:focus:after,
-.btn--gradient:hover:after {
-    opacity: 1
+.btn--gradient .text {
+    color: #fff !important;
 }
+
+/* See Events button (outlined #420566) */
+.btn--highlight {
+    background: transparent !important;
+    border: 2px solid #420566 !important;
+    color: #420566 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn--highlight .text {
+    color: #420566 !important;
+}
+
+/* Hover effect for outline button */
+.btn--highlight:hover {
+    background: #420566 !important;
+    color: #fff !important;
+}
+
+.btn--highlight:hover .text {
+    color: #fff !important;
+}
+
 
 .courses-tags .tag {
     display: -webkit-inline-box;
@@ -1218,11 +1215,19 @@ input[type=search]::-webkit-search-results-decoration {
     color: #3d53eb
 }
 
-.header_logo .logo_picture {
+/* Target only the header logo image */
+.header_logo .logo_picture img {
+    width: 200px;
+    height: 60px;
+    object-fit: contain;
+}
+
+
+/* .header_logo .logo_picture {
     width: 35px;
     height: 39px;
     margin-right: 5px
-}
+} */
 
 .header_logo .text {
     font-size: 12px;
@@ -1601,7 +1606,7 @@ main>.underlay {
 
 .hero_content-header {
     margin-bottom: 30px;
-    color:#fc25f1;
+    color: #420566;
 }
 
 .hero_content-rating {
@@ -1638,7 +1643,7 @@ main>.underlay {
     font-size: 14px
 }
 
-.hero_content-action .btn--highlight:after {
+.hero_content-action:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -3303,7 +3308,7 @@ textarea.field {
     border-radius: 30px;
     padding: 50px 60px 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    max-width: 750px ;
+    max-width: 750px;
     width: 100%;
     position: relative;
     margin: 0 auto;
@@ -3311,7 +3316,8 @@ textarea.field {
 }
 
 .music-trial-heading {
-    color: #ff0844;
+    /* color: #ff0844; */
+    color: #420566;
     font-weight: 700;
     font-size: 24px;
     text-transform: uppercase;
@@ -3320,7 +3326,8 @@ textarea.field {
 }
 
 .music-trial-subheading {
-    color: #ff0844;
+    /* color: #ff0844; */
+    color: #420566;
     font-weight: 800;
     font-size: 32px;
     text-transform: uppercase;
@@ -3358,7 +3365,8 @@ textarea.field {
 
 .music-trial-btn {
     /* background: #ff8c00; */
-    background: linear-gradient(111.41deg, #ff8b67 24.85%, #ff0844 95.39%);
+    /* background: linear-gradient(111.41deg, #ff8b67 24.85%, #ff0844 95.39%); */
+    background: #420566;
     color: #fff;
     font-weight: 700;
     border: none;
