@@ -307,7 +307,7 @@
     <?php include 'footer.php'; ?>
     <!-- Contact Form Popup -->
 
-    <div id="contactPopup" class="popup-overlay">
+    <!-- <div id="contactPopup" class="popup-overlay">
         <div class="popup-content">
             <span class="close-btn" id="closePopup">&times;</span>
             <section class="contacts_form">
@@ -359,7 +359,7 @@
                 </div>
             </section>
         </div>
-    </div>
+    </div> -->
 
     <!-- Scripts -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

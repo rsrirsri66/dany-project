@@ -62,90 +62,286 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
     <link rel="stylesheet preload" as=style href=css/icomoon.css>
     <link rel="stylesheet preload" as=style href=css/libs.min.css>
     <link rel=stylesheet href=css/pricing.min.css>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
     <style>
-    /* Media Popup Styles */
-    .media-popup {
-        display: none;
-        position: fixed;
-        z-index: 99999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background: rgba(0, 0, 0, 0.85);
-        justify-content: center;
-        align-items: center;
-    }
+        /* Media Popup Styles */
+        .media-popup {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+        }
 
-    .media-popup-content {
-        max-width: 90%;
-        max-height: 80%;
-    }
+        .media-popup-content {
+            max-width: 90%;
+            max-height: 80%;
+        }
 
-    .media-popup-content img,
-    .media-popup-content video {
-        width: 100%;
-        height: auto;
-        border-radius: 6px;
-    }
+        .media-popup-content img,
+        .media-popup-content video {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
 
-    .media-popup-close {
-        position: absolute;
-        top: 15px;
-        right: 25px;
-        font-size: 32px;
-        font-weight: bold;
-        color: #fff;
-        cursor: pointer;
-        z-index: 99999;
-    }
+        .media-popup-close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            z-index: 99999;
+        }
 
-    .media-popup-close:hover {
-        color: red;
-    }
+        .media-popup-close:hover {
+            color: red;
+        }
 
-    /* Card wrapper styling */
-    /* Card wrapper styling */
-    .pricing_list-card {
-        width: 100%;
-        max-width: 350px;
-        /* Consistent card width */
-        margin: 0 auto;
-    }
+        /* Card wrapper styling */
+        /* Card wrapper styling */
+        .pricing_list-card {
+            width: 100%;
+            max-width: 350px;
+            /* Consistent card width */
+            margin: 0 auto;
+        }
 
-    .card-wrapper {
-        border: 1px solid #ddd;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+        .card-wrapper {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    .card-wrapper:hover {
-        transform: translateY(-5px);
-    }
+        .card-wrapper:hover {
+            transform: translateY(-5px);
+        }
 
-    /* Common media styling for both video and image */
-    .card-wrapper video,
-    .card-wrapper img {
-        width: 100%;
-        height: 220px;
-        /* Fixed height for all */
-        object-fit: cover;
-        /* Crop nicely */
-        border-radius: 0;
-    }
+        /* Common media styling for both video and image */
+        .card-wrapper video,
+        .card-wrapper img {
+            width: 100%;
+            height: 220px;
+            /* Fixed height for all */
+            object-fit: cover;
+            /* Crop nicely */
+            border-radius: 0;
+        }
+
+        .event-img {
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .event-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .event-img video {
+            border-radius: 12px;
+        }
+
+        /* Video Carousel Wrapper Fix */
+        #videoCarousel {
+            position: relative;
+        }
+
+        /* Make videos same size as images */
+        .event-video {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .event-video:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Properly center carousel controls relative to videos */
+        #videoCarousel .carousel-control-prev.custom-prev,
+        #videoCarousel .carousel-control-next.custom-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: auto;
+            background: none;
+            border: none;
+        }
+
+        /* Align controls at screen edges (same as image section) */
+        #videoCarousel .custom-prev {
+            left: 25px;
+        }
+
+        #videoCarousel .custom-next {
+            right: 25px;
+        }
+
+        /* Match the circular button style */
+        #videoCarousel .carousel-control-prev-icon,
+        #videoCarousel .carousel-control-next-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.8rem;
+            color: #000;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        #videoCarousel .carousel-control-prev-icon:hover,
+        #videoCarousel .carousel-control-next-icon:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 992px) {
+            .event-video {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .event-video {
+                height: 230px;
+            }
+
+            #videoCarousel .carousel-control-prev-icon,
+            #videoCarousel .carousel-control-next-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.4rem;
+            }
+
+            #videoCarousel .custom-prev {
+                left: 10px;
+            }
+
+            #videoCarousel .custom-next {
+                right: 10px;
+            }
+        }
+
+
+
+        /* Ensure carousel is positioned relative for proper overlay */
+        #eventCarousel {
+            position: relative;
+        }
+
+        /* Fix control buttons to overlay on sides of image */
+        .carousel-control-prev.custom-prev,
+        .carousel-control-next.custom-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: auto;
+            background: none;
+            border: none;
+        }
+
+        /* Move buttons to screen edges */
+        .custom-prev {
+            left: 15px;
+            /* adjust as needed */
+        }
+
+        .custom-next {
+            right: 15px;
+            /* adjust as needed */
+        }
+
+        /* Circular Bootstrap icon styling */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.8rem;
+            color: #000;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.4rem;
+            }
+
+            .custom-prev {
+                left: 8px;
+            }
+
+            .custom-next {
+                right: 8px;
+            }
+        }
+
+
+        @media (max-width: 992px) {
+            .event-img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .event-img {
+                height: 230px;
+            }
+
+
+        }
     </style>
 </head>
 
 <body>
-    <?php include 'header.php' ; ?>
+    <?php include 'header.php'; ?>
     <main>
         <div class=underlay></div>
         <section class="hero" style="background: url('img/eventmusic.jpg') no-repeat center center / cover; 
@@ -175,106 +371,124 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
         </section>
         <section class="pricing">
             <div class="container">
-                <div class="pricing_header">
-                    <h2 class="pricing_header-title">Our Events Photos</h2>
-                </div>
 
                 <!-- Tabs -->
-                <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
-                    <?php 
-            $first = true;
-            foreach ($events as $event) { ?>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link <?= $first ? 'active' : '' ?>" id="tab-<?= $event['id'] ?>"
-                            data-bs-toggle="tab" data-bs-target="#photos-<?= $event['id'] ?>" type="button" role="tab"
-                            aria-controls="photos-<?= $event['id'] ?>" aria-selected="<?= $first ? 'true' : 'false' ?>">
-                            <span class="nav-link_text"><?= htmlspecialchars($event['name']) ?></span>
-                        </button>
-                    </li>
-                    <?php $first = false; } ?>
+                <ul class="event_titles d-flex align-items-center justify-content-center flex-wrap">
+                    <?php
+                    foreach ($events as $event) { ?>
+                        <li class="event-item">
+                            <h2 class="event-title"><?= htmlspecialchars($event['name']) ?></h2>
+                        </li>
+                    <?php } ?>
                 </ul>
 
                 <!-- Tab Content -->
-                <div class="tab-content">
-                    <?php 
-            $first = true;
-            foreach ($events as $event) { ?>
-                    <div class="tab-pane fade <?= $first ? 'show active' : '' ?>" id="photos-<?= $event['id'] ?>"
-                        role="tabpanel" aria-labelledby="tab-<?= $event['id'] ?>">
-                        <ul class="pricing_list d-md-flex flex-wrap">
-                            <?php foreach ($event['images'] as $img) { ?>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--basic">
-                                        <h5 class="top_title"><?= htmlspecialchars($event['name']) ?> Celebration</h5>
+                <div class="container-fluid my-5 position-relative">
+                    <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                        <div class="carousel-inner">
+
+                            <?php
+                            $first = true;
+                            foreach ($events as $event) {
+                                $images = $event['images'];
+                                $chunks = array_chunk($images, 3); // 3 per slide
+
+                                foreach ($chunks as $chunk) { ?>
+                                    <div class="carousel-item <?= $first ? 'active' : '' ?>">
+                                        <div class="row g-3 justify-content-center">
+                                            <?php foreach ($chunk as $img) { ?>
+                                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                                    <img src="admin/<?= htmlspecialchars($img) ?>"
+                                                        class="d-block w-100 rounded event-img"
+                                                        alt="<?= htmlspecialchars($event['name']) ?> Image">
+                                                </div>
+                                            <?php } ?>
+                                        </div>
                                     </div>
-                                    <div class="main">
-                                        <img src="admin/<?= $img ?>" class="img-fluid rounded w-100"
-                                            alt="<?= $event['name'] ?> Image">
-                                    </div>
-                                </div>
-                            </li>
-                            <?php } ?>
-                        </ul>
+                            <?php
+                                    $first = false;
+                                }
+                            }
+                            ?>
+                        </div>
+
+                        <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                            <i class="bi bi-chevron-left carousel-control-prev-icon"></i>
+                        </button>
+
+                        <button class="carousel-control-next custom-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                            <i class="bi bi-chevron-right carousel-control-next-icon"></i>
+                        </button>
+
                     </div>
-                    <?php $first = false; } ?>
                 </div>
+
             </div>
         </section>
 
 
         <!-- Second Section (Videos) -->
+
         <section class="pricing">
             <div class="container">
-                <div class="pricing_header">
-                    <h2 class="pricing_header-title">Our Events Videos</h2>
-                </div>
 
                 <!-- Tabs -->
-                <ul class="pricing_nav d-flex align-items-center justify-content-center nav nav-tabs" role="tablist">
-                    <?php 
-            $first = true;
-            foreach ($events as $event) { ?>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link <?= $first ? 'active' : '' ?>" id="tab-video-<?= $event['id'] ?>"
-                            data-bs-toggle="tab" data-bs-target="#videos-<?= $event['id'] ?>" type="button" role="tab"
-                            aria-controls="videos-<?= $event['id'] ?>" aria-selected="<?= $first ? 'true' : 'false' ?>">
-                            <span class="nav-link_text"><?= htmlspecialchars($event['name']) ?></span>
-                        </button>
-                    </li>
-                    <?php $first = false; } ?>
+                <ul class="event_titles d-flex align-items-center justify-content-center flex-wrap">
+                    <?php
+                    foreach ($video_events as $video_event) { ?>
+                        <li class="event-item">
+                            <h2 class="event-title"><?= htmlspecialchars($video_event['name']) ?></h2>
+                        </li>
+                    <?php } ?>
                 </ul>
 
-                <!-- Tab Content -->
-                <div class="tab-content">
-                    <?php 
-            $first = true;
-            foreach ($video_events as $video_event) { ?>
-                    <div class="tab-pane fade <?= $first ? 'show active' : '' ?>" id="videos-<?= $video_event['id'] ?>"
-                        role="tabpanel" aria-labelledby="tab-video-<?= $video_event['id'] ?>">
-                        <ul class="pricing_list d-md-flex flex-wrap">
-                            <?php foreach ($video_event['videos'] as $video) { ?>
-                            <li class="pricing_list-card col-md-6 col-lg-4 mb-4">
-                                <div class="card-wrapper">
-                                    <div class="top top--advanced">
-                                        <h5 class="top_title"><?= htmlspecialchars($event['name']) ?> Performance</h5>
+                <!-- Carousel -->
+                <div class="container-fluid my-5 position-relative">
+                    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                        <div class="carousel-inner">
+
+                            <?php
+                            $first = true;
+                            foreach ($video_events as $video_event) {
+                                $videos = $video_event['videos'];
+                                $chunks = array_chunk($videos, 3); // 3 videos per slide
+
+                                foreach ($chunks as $chunk) { ?>
+                                    <div class="carousel-item <?= $first ? 'active' : '' ?>">
+                                        <div class="row g-3 justify-content-center">
+                                            <?php foreach ($chunk as $video) { ?>
+                                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                                    <video class="d-block w-100 rounded event-video" controls>
+                                                        <source src="admin/<?= htmlspecialchars($video) ?>" type="video/mp4">
+                                                        Your browser does not support video.
+                                                    </video>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
                                     </div>
-                                    <div class="main">
-                                        <video class="w-100 rounded" controls>
-                                            <source src="admin/<?= $video ?>" type="video/mp4">
-                                            Your browser does not support video.
-                                        </video>
-                                    </div>
-                                </div>
-                            </li>
-                            <?php } ?>
-                        </ul>
+                            <?php
+                                    $first = false;
+                                }
+                            }
+                            ?>
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                            <i class="bi bi-chevron-left carousel-control-prev-icon"></i>
+                        </button>
+
+                        <button class="carousel-control-next custom-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                            <i class="bi bi-chevron-right carousel-control-next-icon"></i>
+                        </button>
+
                     </div>
-                    <?php $first = false; } ?>
                 </div>
             </div>
         </section>
-         <section class=faq>
+
+
+        <section class=faq>
             <div class=phone>
                 <lottie-player src=lottie/phone.json background=404.html speed=1 style="width: 100%; height: 100%" loop
                     autoplay></lottie-player>
@@ -372,19 +586,19 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
             </div>
         </section>
     </main>
-    <?php include 'footer.php' ; ?>
+    <?php include 'footer.php'; ?>
     <script src=../../unpkg.com/%40lottiefiles/lottie-player%402.0.12/dist/lottie-player.js></script>
     <script src=js/common.min.js></script>
     <script src=js/demo.js></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2SRB925J5"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-J2SRB925J5');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-J2SRB925J5');
     </script>
 </body>
 <!-- Media Popup -->
@@ -393,68 +607,68 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
     <div class="media-popup-content" id="mediaPopupContent"></div>
 </div>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const popup = document.getElementById("mediaPopup");
-    const popupContent = document.getElementById("mediaPopupContent");
-    const closeBtn = document.querySelector(".media-popup-close");
-    const header = document.querySelector("header"); // your header include
-    const footer = document.querySelector("footer"); // your footer include
+    document.addEventListener("DOMContentLoaded", () => {
+        const popup = document.getElementById("mediaPopup");
+        const popupContent = document.getElementById("mediaPopupContent");
+        const closeBtn = document.querySelector(".media-popup-close");
+        const header = document.querySelector("header"); // your header include
+        const footer = document.querySelector("footer"); // your footer include
 
-    // Open popup on image/video click
-    document.querySelectorAll(".pricing_list img, .pricing_list video").forEach(el => {
-        el.addEventListener("click", () => {
-            popup.style.display = "flex";
+        // Open popup on image/video click
+        document.querySelectorAll(".pricing_list img, .pricing_list video").forEach(el => {
+            el.addEventListener("click", () => {
+                popup.style.display = "flex";
+                popupContent.innerHTML = "";
+
+                // Disable page scroll
+                document.body.style.overflow = "hidden";
+
+                // Hide header & footer
+                if (header) header.style.display = "none";
+                if (footer) footer.style.display = "none";
+
+                if (el.tagName.toLowerCase() === "img") {
+                    let img = document.createElement("img");
+                    img.src = el.src;
+                    popupContent.appendChild(img);
+                } else if (el.tagName.toLowerCase() === "video") {
+                    let video = document.createElement("video");
+                    video.src = el.querySelector("source").src;
+                    video.controls = true;
+                    video.autoplay = true;
+                    popupContent.appendChild(video);
+                }
+            });
+        });
+
+        // Function to close popup
+        function closePopup() {
+            popup.style.display = "none";
             popupContent.innerHTML = "";
+            document.body.style.overflow = ""; // Restore scroll
 
-            // Disable page scroll
-            document.body.style.overflow = "hidden";
+            // Show header & footer back
+            if (header) header.style.display = "";
+            if (footer) footer.style.display = "";
+        }
 
-            // Hide header & footer
-            if (header) header.style.display = "none";
-            if (footer) footer.style.display = "none";
+        // Close on X
+        closeBtn.addEventListener("click", closePopup);
 
-            if (el.tagName.toLowerCase() === "img") {
-                let img = document.createElement("img");
-                img.src = el.src;
-                popupContent.appendChild(img);
-            } else if (el.tagName.toLowerCase() === "video") {
-                let video = document.createElement("video");
-                video.src = el.querySelector("source").src;
-                video.controls = true;
-                video.autoplay = true;
-                popupContent.appendChild(video);
+        // Close on outside click
+        popup.addEventListener("click", (e) => {
+            if (e.target === popup) {
+                closePopup();
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && popup.style.display === "flex") {
+                closePopup();
             }
         });
     });
-
-    // Function to close popup
-    function closePopup() {
-        popup.style.display = "none";
-        popupContent.innerHTML = "";
-        document.body.style.overflow = ""; // Restore scroll
-
-        // Show header & footer back
-        if (header) header.style.display = "";
-        if (footer) footer.style.display = "";
-    }
-
-    // Close on X
-    closeBtn.addEventListener("click", closePopup);
-
-    // Close on outside click
-    popup.addEventListener("click", (e) => {
-        if (e.target === popup) {
-            closePopup();
-        }
-    });
-
-    // Close on ESC key
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && popup.style.display === "flex") {
-            closePopup();
-        }
-    });
-});
 </script>
 
 
