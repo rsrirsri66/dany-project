@@ -1,10 +1,9 @@
-
 <header class=header data-page=home>
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+    <div class="container head d-flex flex-wrap justify-content-between align-items-center">
         <div class="logo header_logo"><a class="d-inline-flex align-items-center" href=index.php><span
                     class=logo_picture><img src=svg/frame.png alt=DynamicStaccato> </span>
-                    
-                    </a></div><button
+
+            </a></div><button
             class=header_trigger type=button data-bs-toggle=collapse data-bs-target=#headerMenu
             aria-controls=headerMenu><span class=line></span> <span class=line></span> <span class=line></span></button>
         <nav class="header_nav collapse" id=headerMenu>

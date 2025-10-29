@@ -108,7 +108,7 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
             color: red;
         }
 
-        /* Card wrapper styling */
+
         /* Card wrapper styling */
         .pricing_list-card {
             width: 100%;
@@ -144,152 +144,151 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
             border-radius: 0;
         }
 
-        .event-img {
-            height: 420px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .event-img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
         .event-img video {
             border-radius: 12px;
         }
 
-        /* Video Carousel Wrapper Fix */
-        #videoCarousel {
-            position: relative;
-        }
-
         /* Make videos same size as images */
         .event-video {
-            width: 100%;
-            height: 420px;
+            width: 666px;
+            height: 500px;
             object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0.25;
+            transition: all 0.5s ease;
+            margin: 0 20px;
+            border-radius: 10px;
         }
 
-        .event-video:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Properly center carousel controls relative to videos */
-        #videoCarousel .carousel-control-prev.custom-prev,
-        #videoCarousel .carousel-control-next.custom-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: auto;
-            background: none;
-            border: none;
-        }
-
-        /* Align controls at screen edges (same as image section) */
-        #videoCarousel .custom-prev {
-            left: 25px;
-        }
-
-        #videoCarousel .custom-next {
-            right: 25px;
-        }
-
-        /* Match the circular button style */
-        #videoCarousel .carousel-control-prev-icon,
-        #videoCarousel .carousel-control-next-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.8rem;
-            color: #000;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        #videoCarousel .carousel-control-prev-icon:hover,
-        #videoCarousel .carousel-control-next-icon:hover {
-            background: rgba(255, 255, 255, 1);
+        /* Active video focused look */
+        .carousel-item.active .event-video {
+            opacity: 1;
             transform: scale(1.05);
+            z-index: 2;
         }
 
-        /* Responsive tweaks */
+        /* Adjust responsiveness */
         @media (max-width: 992px) {
             .event-video {
-                height: 300px;
+                width: 90%;
+                height: 350px;
             }
         }
 
         @media (max-width: 768px) {
             .event-video {
-                height: 230px;
-            }
-
-            #videoCarousel .carousel-control-prev-icon,
-            #videoCarousel .carousel-control-next-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.4rem;
-            }
-
-            #videoCarousel .custom-prev {
-                left: 10px;
-            }
-
-            #videoCarousel .custom-next {
-                right: 10px;
+                width: 100%;
+                height: 250px;
             }
         }
 
 
+        /* images */
 
-        /* Ensure carousel is positioned relative for proper overlay */
+        /* Carousel container */
         #eventCarousel {
             position: relative;
+            overflow: visible;
         }
 
-        /* Fix control buttons to overlay on sides of image */
+        /* Each carousel slide */
+        .carousel-item {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: nowrap;
+            overflow: visible;
+        }
+
+        /* Remove Bootstrap’s column wrapping inside each slide */
+        .carousel-item .row {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: center;
+            gap: 10px;
+            margin: 0;
+        }
+
+        /* Each image wrapper */
+        .carousel-item .col-lg-4,
+        .carousel-item .col-md-6,
+        .carousel-item .col-sm-12 {
+            flex: 0 0 auto;
+            width: auto !important;
+        }
+
+        /* Carousel image styling */
+        .event-img {
+            width: 666px;
+            height: 500px;
+            object-fit: cover;
+            opacity: 0.25;
+            transition: all 0.5s ease;
+            margin: 0 20px;
+        }
+
+        /* Center active image full opacity */
+        .carousel-item.active .event-img {
+            opacity: 1;
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        /* Make half of next/prev images peek from sides */
+        #eventCarousel .carousel-inner {
+            overflow: visible;
+            margin: 0 auto;
+            width: 80%;
+        }
+
+
+        /* Carousel arrows positioned exactly at page edges */
         .carousel-control-prev.custom-prev,
         .carousel-control-next.custom-next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
-            width: auto;
             background: none;
             border: none;
+            width: auto;
         }
 
-        /* Move buttons to screen edges */
+        /* push beyond carousel’s visible 80% width */
         .custom-prev {
-            left: 15px;
-            /* adjust as needed */
+            left: -60px;
         }
 
         .custom-next {
-            right: 15px;
-            /* adjust as needed */
+            right: -60px;
         }
 
-        /* Circular Bootstrap icon styling */
+        /* For smaller screens */
+        @media (max-width: 768px) {
+            .custom-prev {
+                left: -30px;
+            }
+
+            .custom-next {
+                right: -30px;
+            }
+        }
+
+        /* Remove inner spacing so arrows align perfectly */
+        .container-fluid,
+        #eventCarousel .carousel-inner {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+
+        /* Arrow icons */
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
+            /* border-radius: 50%; */
             width: 50px;
             height: 50px;
             font-size: 1.8rem;
@@ -304,38 +303,55 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
             transform: scale(1.05);
         }
 
-        /* Responsive Adjustments */
+
+
+
+        /* Title font */
+        .event-title {
+            font-family: wfont_fed998_f0cf847039a14295971ec16cd02a659e,
+                wf_f0cf847039a14295971ec16cd,
+                orig_bebas_kai;
+            font-size: 150px;
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .event-img {
+                width: 90%;
+                height: 350px;
+            }
+
+            .event-title {
+                font-size: 90px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .event-img {
+                width: 100%;
+                height: 250px;
+            }
 
             .carousel-control-prev-icon,
             .carousel-control-next-icon {
                 width: 40px;
                 height: 40px;
-                font-size: 1.4rem;
             }
 
             .custom-prev {
-                left: 8px;
+                left: 10px;
             }
 
             .custom-next {
-                right: 8px;
-            }
-        }
-
-
-        @media (max-width: 992px) {
-            .event-img {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .event-img {
-                height: 230px;
+                right: 10px;
             }
 
-
+            .event-title {
+                font-size: 60px;
+            }
         }
     </style>
 </head>
@@ -369,6 +385,7 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
             </div>
             </div>
         </section>
+
         <section class="pricing">
             <div class="container">
 
@@ -474,13 +491,14 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
                         </div>
 
                         <!-- Carousel Controls -->
-                        <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
                             <i class="bi bi-chevron-left carousel-control-prev-icon"></i>
                         </button>
 
-                        <button class="carousel-control-next custom-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next custom-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
                             <i class="bi bi-chevron-right carousel-control-next-icon"></i>
                         </button>
+
 
                     </div>
                 </div>
@@ -668,6 +686,12 @@ while ($video_row = mysqli_fetch_assoc($video_result)) {
                 closePopup();
             }
         });
+    });
+
+    const videoCarousel = document.getElementById('videoCarousel');
+    videoCarousel.addEventListener('slide.bs.carousel', function() {
+        const videos = videoCarousel.querySelectorAll('video');
+        videos.forEach(video => video.pause());
     });
 </script>
 

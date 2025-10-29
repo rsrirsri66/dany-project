@@ -1221,9 +1221,15 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 .header_logo .logo_picture {
-    width: 35px;
-    height: 39px;
+    width: auto !important;
+    height: auto !important;
     margin-right: 5px
+}
+
+.header_logo .logo_picture img {
+    width: 200px !important;
+    height: 60px !important;
+    object-fit: contain;
 }
 
 .header_logo .text {
