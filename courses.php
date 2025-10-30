@@ -53,163 +53,17 @@
         </div>
     </header>
     <main>
-        <section class="list">
-            <div class="container">
-                <ul class="list_courses d-md-flex flex-wrap">
+ <section class="list" style="padding:40px 0; background-color:#fff;">
+  <div class="container">
+    <ul class="list_courses d-md-flex flex-wrap" style="list-style:none; padding:0; margin:0 -15px;">
 
-                    <!-- Piano -->
-                    <li class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                        <div class="course-card_wrapper">
-                            <div class="top d-flex align-items-start">
-                                <span class="top_icon top_icon--blue"><i class="fas fa-music icon"></i></span>
-                                <div class="wrapper d-flex flex-column">
-                                    <h5 class="top_title">Piano</h5>
-                                    <ul class="rating d-flex align-items-center">
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    </ul>
-                                    <span class="top_author">Online & Offline</span>
-                                    <span class="top_details">Interactive Classes</span>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <a class="bottom_btn btn btn--bordered btn--arrow" href="contacts.php">register for a
-                                    course <i class="icon-arrow-right-solid icon"></i></a>
-                            </div>
-                        </div>
-                    </li>
+      <!-- Keyboard & Piano -->
+     
+    </ul>
+  </div>
+</section>
 
-                    <!-- Keyboard -->
-                    <li class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                        <div class="course-card_wrapper">
-                            <div class="top d-flex align-items-start">
-                                <span class="top_icon top_icon--orange"><i class="fas fa-keyboard icon"></i></span>
-                                <div class="wrapper d-flex flex-column">
-                                    <h5 class="top_title">Keyboard</h5>
-                                    <ul class="rating d-flex align-items-center">
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    </ul>
-                                    <span class="top_author">Online & Offline</span>
-                                    <span class="top_details">Interactive Classes</span>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <a class="bottom_btn btn btn--bordered btn--arrow" href="contacts.php">register for a
-                                    course <i class="icon-arrow-right-solid icon"></i></a>
-                            </div>
-                        </div>
-                    </li>
 
-                    <!-- Vocals -->
-                    <li class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                        <div class="course-card_wrapper">
-                            <div class="top d-flex align-items-start">
-                                <span class="top_icon top_icon--sky"><i class="fas fa-microphone icon"></i></span>
-                                <div class="wrapper d-flex flex-column">
-                                    <h5 class="top_title">Vocals</h5>
-                                    <ul class="rating d-flex align-items-center">
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    </ul>
-                                    <span class="top_author">Online & Offline</span>
-                                    <span class="top_details">Interactive Classes</span>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <a class="bottom_btn btn btn--bordered btn--arrow" href="contacts.php">register for a
-                                    course <i class="icon-arrow-right-solid icon"></i></a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Guitar -->
-                    <li class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                        <div class="course-card_wrapper">
-                            <div class="top d-flex align-items-start">
-                                <span class="top_icon top_icon--pink"><i class="fas fa-guitar icon"></i></span>
-                                <div class="wrapper d-flex flex-column">
-                                    <h5 class="top_title">Guitar</h5>
-                                    <ul class="rating d-flex align-items-center">
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    </ul>
-                                    <span class="top_author">Online & Offline</span>
-                                    <span class="top_details">Interactive Classes</span>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <a class="bottom_btn btn btn--bordered btn--arrow" href="contacts.php">register for a
-                                    course <i class="icon-arrow-right-solid icon"></i></a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Violin -->
-                    <li class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                        <div class="course-card_wrapper">
-                            <div class="top d-flex align-items-start">
-                                <span class="top_icon top_icon--blue"><i class="fas fa-music icon"></i></span>
-                                <div class="wrapper d-flex flex-column">
-                                    <h5 class="top_title">Violin</h5>
-                                    <ul class="rating d-flex align-items-center">
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    </ul>
-                                    <span class="top_author">Online & Offline</span>
-                                    <span class="top_details">Interactive Classes</span>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <a class="bottom_btn btn btn--bordered btn--arrow" href="contacts.php">register for a
-                                    course <i class="icon-arrow-right-solid icon"></i></a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Veena -->
-                    <li class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                        <div class="course-card_wrapper">
-                            <div class="top d-flex align-items-start">
-                                <span class="top_icon top_icon--orange"><i class="fas fa-drum icon"></i></span>
-                                <div class="wrapper d-flex flex-column">
-                                    <h5 class="top_title">Veena</h5>
-                                    <ul class="rating d-flex align-items-center">
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                        <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    </ul>
-                                    <span class="top_author">Online & Offline</span>
-                                    <span class="top_details">Interactive Classes</span>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <a class="bottom_btn btn btn--bordered btn--arrow" href="contacts.php">register for a
-                                    course <i class="icon-arrow-right-solid icon"></i></a>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-        </section>
 
 
         <!-- <section class=sale>
@@ -235,139 +89,158 @@
                 </div>
             </div>
         </section> -->
-        <section class="reviews" id="reviews">
-            <div class="container">
-                <h2 class="reviews_header">What Our Students Say 🎶</h2>
-                <div class="reviews_slider"><i class="icon-quote-left-solid icon"></i>
-                    <div class="swiper-wrapper">
+       <section class="list" style="padding:60px 0; background-color:#fff;">
+  <div class="container" style="max-width:1200px; margin:auto;">
+    <ul class="list_courses" style="list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; justify-content:center;">
 
-                        <!-- Review 1 -->
-                        <div class="reviews_slider-slide swiper-slide">
-                            <q class="quote">“Joining DynamicStaccato completely changed my piano journey.
-                                The step-by-step guidance and practice sessions gave me confidence to perform on
-                                stage.”</q>
-                            <div class="author d-flex flex-column align-items-center">
-                                <span class="avatar">
-                                    <picture>
-                                        <source data-srcset="img/reviews/piano.webp" srcset="img/reviews/piano.webp">
-                                        <img class="lazy" data-src="img/reviews/piano.jpg" src="img/reviews/piano.jpg"
-                                            alt="Piano Student">
-                                    </picture>
-                                </span>
-                                <span class="name h5">Aravind Kumar</span>
-                                <ul class="rating d-flex align-items-center">
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                </ul>
-                            </div>
-                        </div>
+      <!-- CARD TEMPLATE -->
+      <li style="width:33.333%; padding:15px; box-sizing:border-box; display:flex;">
+        <div style="background:#fff; border:1px solid #ddd; border-radius:12px; padding:25px;
+                    display:flex; flex-direction:column; justify-content:space-between; align-items:center;
+                    height:100%; min-height:440px; max-height:440px; text-align:center; overflow:hidden;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:all 0.3s ease;">
+          <div style="flex-grow:1;">
+            <span style="font-size:38px; color:#420566; display:block; margin-bottom:15px;">
+              <i class="fas fa-music"></i>
+            </span>
+            <h5 style="font-weight:700; font-size:20px; margin-bottom:10px; color:#222;">Keyboard & Piano</h5>
+            <p style="color:#555; font-size:15px; line-height:1.6; margin:0;">
+              Our program combines musical foundation, ear training, and performance skills, following the Trinity College London syllabus. From basic notation to advanced harmony, students build proficiency step by step.
+            </p>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="contacts.php" style="text-transform:uppercase; font-weight:600; font-size:14px;
+              text-decoration:none; display:inline-flex; align-items:center; gap:5px; color:#420566;">
+              register for a course <i class="icon-arrow-right-solid icon"></i>
+            </a>
+          </div>
+        </div>
+      </li>
 
-                        <!-- Review 2 -->
-                        <div class="reviews_slider-slide swiper-slide">
-                            <q class="quote">“The guitar classes are fun and interactive.
-                                Within just a few months, I could play my favorite Tamil songs and jam with
-                                friends.”</q>
-                            <div class="author d-flex flex-column align-items-center">
-                                <span class="avatar">
-                                    <picture>
-                                        <source data-srcset="img/reviews/guitar.webp" srcset="img/reviews/guitar.webp">
-                                        <img class="lazy" data-src="img/reviews/guitar.jpg" src="img/reviews/guitar.jpg"
-                                            alt="Guitar Student">
-                                    </picture>
-                                </span>
-                                <span class="name h5">Divya Shree</span>
-                                <ul class="rating d-flex align-items-center">
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                </ul>
-                            </div>
-                        </div>
+      <!-- VIOLIN -->
+      <li style="width:33.333%; padding:15px; box-sizing:border-box; display:flex;">
+        <div style="background:#fff; border:1px solid #ddd; border-radius:12px; padding:25px;
+                    display:flex; flex-direction:column; justify-content:space-between; align-items:center;
+                    height:100%; min-height:440px; max-height:440px; text-align:center; overflow:hidden;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:all 0.3s ease;">
+          <div style="flex-grow:1;">
+            <span style="font-size:38px; color:#007bff; display:block; margin-bottom:15px;">
+           <i class="fas fa-guitar"></i>
+            </span>
+            <h5 style="font-weight:700; font-size:20px; margin-bottom:10px; color:#222;">Violin</h5>
+            <p style="color:#555; font-size:15px; line-height:1.6; margin:0;">
+              Courses include both Western and Carnatic styles, focusing on pitch accuracy, bowing, sound production, and musical expression.
+            </p>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="contacts.php" style="text-transform:uppercase; font-weight:600; font-size:14px;
+              text-decoration:none; display:inline-flex; align-items:center; gap:5px; color:#420566;">
+              register for a course <i class="icon-arrow-right-solid icon"></i>
+            </a>
+          </div>
+        </div>
+      </li>
 
-                        <!-- Review 3 -->
-                        <div class="reviews_slider-slide swiper-slide">
-                            <q class="quote">“I always wanted to try drums, and DynamicStaccato made it so easy.
-                                The mentors keep the sessions energetic and motivating.”</q>
-                            <div class="author d-flex flex-column align-items-center">
-                                <span class="avatar">
-                                    <picture>
-                                        <source data-srcset="img/reviews/drums.webp" srcset="img/reviews/drums.webp">
-                                        <img class="lazy" data-src="img/reviews/drums.jpg" src="img/reviews/drums.jpg"
-                                            alt="Drums Student">
-                                    </picture>
-                                </span>
-                                <span class="name h5">Karthik Raj</span>
-                                <ul class="rating d-flex align-items-center">
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                </ul>
-                            </div>
-                        </div>
+      <!-- GUITAR -->
+      <li style="width:33.333%; padding:15px; box-sizing:border-box; display:flex;">
+        <div style="background:#fff; border:1px solid #ddd; border-radius:12px; padding:25px;
+                    display:flex; flex-direction:column; justify-content:space-between; align-items:center;
+                    height:100%; min-height:440px; max-height:440px; text-align:center; overflow:hidden;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:all 0.3s ease;">
+          <div style="flex-grow:1;">
+            <span style="font-size:38px; color:#ff56cc; display:block; margin-bottom:15px;">
+              <i class="fas fa-guitar"></i>
+            </span>
+            <h5 style="font-weight:700; font-size:20px; margin-bottom:10px; color:#222;">Guitar</h5>
+            <p style="color:#555; font-size:15px; line-height:1.6; margin:0;">
+              Learn Acoustic, Classical, or Electric Guitar through comprehensive lessons that cover chords, rhythm, scales, theory, fingerstyle techniques, and song performance. Students can pursue casual learning or graded certification under Trinity syllabuses.
+            </p>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="contacts.php" style="text-transform:uppercase; font-weight:600; font-size:14px;
+              text-decoration:none; display:inline-flex; align-items:center; gap:5px; color:#420566;">
+              register for a course <i class="icon-arrow-right-solid icon"></i>
+            </a>
+          </div>
+        </div>
+      </li>
 
-                        <!-- Review 4 -->
-                        <div class="reviews_slider-slide swiper-slide">
-                            <q class="quote">“The violin course is magical.
-                                The teachers focus on techniques as well as emotional expression in music.”</q>
-                            <div class="author d-flex flex-column align-items-center">
-                                <span class="avatar">
-                                    <picture>
-                                        <source data-srcset="img/reviews/violin.webp" srcset="img/reviews/violin.webp">
-                                        <img class="lazy" data-src="img/reviews/violin.jpg" src="img/reviews/violin.jpg"
-                                            alt="Violin Student">
-                                    </picture>
-                                </span>
-                                <span class="name h5">Meena Lakshmi</span>
-                                <ul class="rating d-flex align-items-center">
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                </ul>
-                            </div>
-                        </div>
+      <!-- VOCAL -->
+      <li style="width:33.333%; padding:15px; box-sizing:border-box; display:flex;">
+        <div style="background:#fff; border:1px solid #ddd; border-radius:12px; padding:25px;
+                    display:flex; flex-direction:column; justify-content:space-between; align-items:center;
+                    height:100%; min-height:440px; max-height:440px; text-align:center; overflow:hidden;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:all 0.3s ease;">
+          <div style="flex-grow:1;">
+            <span style="font-size:38px; color:#ff9800; display:block; margin-bottom:15px;">
+              <i class="fas fa-microphone"></i>
+            </span>
+            <h5 style="font-weight:700; font-size:20px; margin-bottom:10px; color:#222;">Vocal</h5>
+            <p style="color:#555; font-size:15px; line-height:1.6; margin:0;">
+              Structured vocal lessons from beginner to advanced levels — focusing on ragas, talas, varnams, and kritis, designed for exams, concerts, and competitions.
+            </p>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="contacts.php" style="text-transform:uppercase; font-weight:600; font-size:14px;
+              text-decoration:none; display:inline-flex; align-items:center; gap:5px; color:#420566;">
+              register for a course <i class="icon-arrow-right-solid icon"></i>
+            </a>
+          </div>
+        </div>
+      </li>
 
-                        <!-- Review 5 -->
-                        <div class="reviews_slider-slide swiper-slide">
-                            <q class="quote">“DynamicStaccato’s vocal training helped me improve my pitch and
-                                confidence.
-                                Now I can sing in concerts without fear!”</q>
-                            <div class="author d-flex flex-column align-items-center">
-                                <span class="avatar">
-                                    <picture>
-                                        <source data-srcset="img/reviews/vocal.webp" srcset="img/reviews/vocal.webp">
-                                        <img class="lazy" data-src="img/reviews/vocal.jpg" src="img/reviews/vocal.jpg"
-                                            alt="Vocal Student">
-                                    </picture>
-                                </span>
-                                <span class="name h5">Sowmiya Devi</span>
-                                <ul class="rating d-flex align-items-center">
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                    <li class="rating_star"><i class="icon-star icon"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+      <!-- KIDS MUSIC -->
+      <li style="width:33.333%; padding:15px; box-sizing:border-box; display:flex;">
+        <div style="background:#fff; border:1px solid #ddd; border-radius:12px; padding:25px;
+                    display:flex; flex-direction:column; justify-content:space-between; align-items:center;
+                    height:100%; min-height:440px; max-height:440px; text-align:center; overflow:hidden;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:all 0.3s ease;">
+          <div style="flex-grow:1;">
+            <span style="font-size:38px; color:#420566; display:block; margin-bottom:15px;">
+              <i class="fas fa-drum"></i>
+            </span>
+            <h5 style="font-weight:700; font-size:20px; margin-bottom:10px; color:#222;">Kids’ Music Foundation</h5>
+            <p style="color:#555; font-size:15px; line-height:1.6; margin:0;">
+              A playful introduction to rhythm, melody, and coordination through singing, games, and mini-instruments. This builds confidence and curiosity for lifelong learning.
+            </p>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="contacts.php" style="text-transform:uppercase; font-weight:600; font-size:14px;
+              text-decoration:none; display:inline-flex; align-items:center; gap:5px; color:#420566;">
+              register for a course <i class="icon-arrow-right-solid icon"></i>
+            </a>
+          </div>
+        </div>
+      </li>
 
-                    <!-- Controls -->
-                    <div class="reviews_slider-controls d-flex align-items-center justify-content-between">
-                        <a class="swiper-button-prev" href="#"><i class="icon-angle-left icon"></i></a>
-                        <a class="swiper-button-next" href="#"><i class="icon-angle-right icon"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- ADULT CLASSES -->
+      <li style="width:33.333%; padding:15px; box-sizing:border-box; display:flex;">
+        <div style="background:#fff; border:1px solid #ddd; border-radius:12px; padding:25px;
+                    display:flex; flex-direction:column; justify-content:space-between; align-items:center;
+                    height:100%; min-height:440px; max-height:440px; text-align:center; overflow:hidden;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:all 0.3s ease;">
+          <div style="flex-grow:1;">
+            <span style="font-size:38px; color:#ff9800; display:block; margin-bottom:15px;">
+              <i class="fas fa-headphones"></i>
+            </span>
+            <h5 style="font-weight:700; font-size:20px; margin-bottom:10px; color:#222;">Adult Hobby Classes</h5>
+            <p style="color:#555; font-size:15px; line-height:1.6; margin:0;">
+              Tailored for professionals who want to relax and rediscover music. Flexible timings and friendly sessions make learning stress-free and fulfilling.
+            </p>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="contacts.php" style="text-transform:uppercase; font-weight:600; font-size:14px;
+              text-decoration:none; display:inline-flex; align-items:center; gap:5px; color:#420566;">
+              register for a course <i class="icon-arrow-right-solid icon"></i>
+            </a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
 
 
     </main>
